@@ -10,30 +10,37 @@
     </head>
         
     <body>
-        <div class="top-bar-left row">
-            <img class="img-logo" src="public/img/logo_minimo.png" />
+        <div class="grid-container">
+            <div class="top-bar-left grid-x grid-margin-x">
+                <img class="img-logo" src="public/img/logo_minimo.png" />
+            </div>
+            <div class="top-bar-right">
+                <ul class="dropdown menu">
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Photodiary</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Travel</a></li>
+                </ul>
+            </div>
+
+            <div class="clear-both"></div>
         </div>
-        <div class="top-bar-right">
-            <ul class="dropdown menu">
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Photodiary</a></li>
-                <li><a href="#">Music</a></li>
-                <li><a href="#">Travel</a></li>
-            </ul>
-        </div>
+        
         <?= $content ?>
 
         <div class="block-footer">
-            <div class="row column">
-            <ul class="menu">
-                <li><a class="footer-links" href="#">Terms and conditions</a></li>
-                <li><a class="footer-links" href="#">Privacy</a></li>
-                <li class="float-right">Follow 
-                <i class="fab fa-facebook-f"></i> 
-                <i class="fab fa-twitter"></i> 
-                <i class="fab fa-linkedin-in"></i>
-                </li>
-            </ul>
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x cell">
+                    <ul class="menu">
+                        <li><a class="footer-links" href="#">Terms and conditions</a></li>
+                        <li><a class="footer-links" href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-float-right">Follow 
+                    <i class="fab fa-facebook-f"></i> 
+                    <i class="fab fa-twitter"></i> 
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
             </div>
         </div>
     </body>

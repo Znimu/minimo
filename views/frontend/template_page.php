@@ -1,7 +1,14 @@
 <?php $title = "Minimo - Page"; ?>
 
 <?php ob_start(); ?>
-<?php require('template_main_article.php'); ?>
+
+<?php
+if ($action === "category") {
+    require('template_category.php');
+}
+else {
+    require('template_main_article.php');
+?>
 
 <div class="grid-container share">
     <span class="caps">Share </span>
@@ -11,6 +18,8 @@
     <i class="fab fa-linkedin-in"></i> 
     <i class="fab fa-pinterest"></i>
 </div>
+
+<?php } ?>
 
 <?php require('template_more_articles.php'); ?>
 <?php $content = ob_get_clean(); ?>

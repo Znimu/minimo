@@ -1,9 +1,9 @@
 <?php
 if (isset($_GET['action'])) {
   if ($_GET['action'] === "accueil")
-    require "views/template_accueil.php";
+    require "views/frontend/template_accueil.php";
   elseif ($_GET['action'] === "page")
-    require "views/template_page.php";
+    require "views/frontend/template_page.php";
   elseif ($_GET['action'] === "article")
-    require "views/template_article.php";
+    require "views/frontend/template_article.php";
 }

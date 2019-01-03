@@ -1,27 +1,6 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minimo - Welcome</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/foundation.min.css">
-    <link rel="stylesheet" href="public/css/app.css">
-</head>
-<body>
+<?php $title = "Minimo - Page"; ?>
 
-    <div class="top-bar-left row">
-        <img class="img-logo" src="public/img/logo_minimo.png" />
-    </div>
-    <div class="top-bar-right">
-        <ul class="dropdown menu">
-        <li><a href="#">Lifestyle</a></li>
-        <li><a href="#">Photodiary</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Travel</a></li>
-        </ul>
-    </div>
-
+<?php ob_start(); ?>
     <br>
 
     <div class="row">
@@ -39,7 +18,7 @@
             <p>Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia. Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia. Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime.<br /><br />Numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia.</p>
             <br />
         </div>
-        <div class="medium-3 columns">
+        <div class="medium-3 columns"><!-- SIDE BLOCK -->
             <img class="sidebar-img" src="public/img/09_me.png" />
             <h1>About me</h1>
             <p>Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper.</p>
@@ -50,26 +29,83 @@
                     <i class="fab fa-pinterest"></i>
                 </li>
             </ul>
+            <a class="top-post" href="#">Top posts</a>
+            <ul>
+                <li><a><h3 class="side-block-title">A day exploring the Alps</h3><span class="side-block-nb-comment">24 comments</span></a></li>
+            </ul>
+            <ul>
+                <li><a><h3 class="side-block-title">American dream</h3><span class="side-block-nb-comment">19 comments</span></a></li>
+            </ul>
+            <ul>
+                <li><a><h3 class="side-block-title">COld winter days</h3><span class="side-block-nb-comment">17 comments</span></a></li>
+            </ul>
+
+            <img class="article-pub" src="public/img/Pub.png" />
         </div>
     </div>
 
-    <div class="block-footer">
-    <div class="row column">
-        <ul class="menu">
-        <li><a class="footer-links" href="#">Terms and conditions</a></li>
-        <li><a class="footer-links" href="#">Privacy</a></li>
-        <li class="float-right">Follow 
-            <i class="fab fa-facebook-f"></i> 
-            <i class="fab fa-twitter"></i> 
-            <i class="fab fa-linkedin-in"></i>
-        </li>
-        </ul>
-    </div>
-    </div>
+    <?php require('template_more_articles.php'); ?>
 
-    <script src="public/js/vendor/jquery.js"></script>
-    <script src="public/js/vendor/what-input.js"></script>
-    <script src="public/js/vendor/foundation.js"></script>
-    <script src="public/js/app.js"></script>
-</body>
-</html>
+    <div class="comments">
+        <div class="row">
+            <div class="medium-1 columns">&nbsp;</div>
+            <div class="medium-10 columns">
+                <div class="see-more-title" href="#">2 comments</div>
+            </div>
+            <div class="medium-1 columns">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="medium-1 columns">&nbsp;</div>
+            <div class="medium-1 columns">
+                <img class="comment-img" src="public/img/upload/Avatar01.png" />
+            </div>
+            <div class="medium-9 columns">
+                <p class="name-bold">John Doe</p>
+                <p>Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo.</p>
+            </div>
+            <div class="medium-1 columns">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="medium-2 columns">&nbsp;</div>
+            <div class="medium-9 columns">
+                <a class="comment-reply" href="#">Reply</a>
+            </div>
+            <div class="medium-1 columns">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="medium-1 columns">&nbsp;</div>
+            <div class="medium-1 columns">
+                <img class="comment-img" src="public/img/upload/Avatar01.png" />
+            </div>
+            <div class="medium-9 columns">
+                <p class="name-bold">Johnathan Doremi</p>
+                <p>Haec et huius modi quaedam impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo.</p>
+            </div>
+            <div class="medium-1 columns">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="medium-2 columns">&nbsp;</div>
+            <div class="medium-9 columns">
+                <a class="comment-reply" href="#">Reply</a>
+            </div>
+            <div class="medium-1 columns">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="medium-1 columns">&nbsp;</div>
+            <div class="medium-1 columns">
+                <img class="comment-img" src="public/img/upload/Avatar01.png" />
+            </div>
+            <div class="medium-9 columns">
+                <textarea class="comment-input" placeholder="JOIN THE DISCUSSION"></textarea>
+            </div>
+            <div class="medium-1 columns">&nbsp;</div>
+        </div>
+    </div>
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>

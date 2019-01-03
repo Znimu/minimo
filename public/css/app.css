@@ -36,6 +36,13 @@ h2 {
     font-size: 1.2em;
 }
 
+h3 {
+    font-family: font_titles;
+    color: #626262;
+    margin: 20px 0 30px 0;
+    font-size: 1.2em;
+}
+
 p {
     font-family: font_texts;
     color: #626262;
@@ -148,4 +155,64 @@ a {
 
 .share_me {
     color: #aba99d;
+}
+
+.see-more {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: #F0F0F0;
+    margin-bottom: 20px;
+}
+
+.see-more-title {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #aba99d;
+}
+
+.comments {
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
+.comment-img {
+    border-radius: 50%;
+}
+
+.name-bold {
+    font-weight: bold;
+}
+
+.comment-reply {
+    display: block;
+    margin-bottom: 50px;
+}
+
+.comment-input {
+    border-radius: 5px;
+    padding: 15px 20px;
+    height: 70px;
+}
+
+.top-post {
+    display: block;
+    margin-top: 75px;
+}
+
+.side-block-title {
+    margin-bottom: 10px;
+}
+
+.side-block-nb-comment {
+    text-transform: uppercase;
+    color: #aba99d;
+    font-size: 0.8em;
+}
+
+.article-pub {
+    margin-top: 35px;
+}
+
+.see-more-link {
+    text-transform: none;
 }

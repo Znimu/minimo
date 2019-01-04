@@ -1,8 +1,6 @@
 <?php
-
 // Chargement des classes
 require_once('models/PostManager.php');
-require_once('models/EmailManager.php');
 require_once('models/CommentManager.php');
 
 function get2Posts()

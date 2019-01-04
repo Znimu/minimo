@@ -1,6 +1,7 @@
 //$(document).foundation();
 
 $(document).ready(function() {
+    // NEWSLETTER
     function newsletterSubscribe() {
         var email = $('#newEmail').val();
     
@@ -27,5 +28,18 @@ $(document).ready(function() {
         var key = e.which;
 
         newsletterSubscribe();
+    });
+
+    // AJOUT 2 ARTICLES
+    $('#button-load').on("click", function() {
+        $.ajax({
+            url: "controllers/ajout2Articles.php"
+        })
+        .done(function(msg) {
+            $('#block-ajout-articles').append(msg);
+        })
+        .fail(function(msg) {
+          alert("Error : " + msg);
+        });
     });
 });

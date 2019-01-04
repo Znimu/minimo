@@ -32,11 +32,13 @@
 	</div>
 </div>
 
+<div id="block-ajout-articles"></div>
+
 <div class="grid-container">
 	<div class="grid-x grid-margin-x">
 		<div class="medium-5 cell">&nbsp;</div>
 		<div class="medium-2 cell">
-			<input type="button" class="button-load" value="Load more" />
+			<input type="button" id="button-load" class="button-load" value="Load more" />
 		</div>
 		<div class="medium-5 cell">&nbsp;</div>
 	</div>

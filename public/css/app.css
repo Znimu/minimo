@@ -205,6 +205,11 @@ a {
     border-radius: 50%;
 }
 
+.comments-date {
+    font-weight: normal;
+    color: #aba99d;
+}
+
 .name-bold {
     font-weight: bold;
 }

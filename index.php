@@ -10,7 +10,10 @@ if (isset($_GET['action'])) {
 		require "views/frontend/template_page.php";
 	elseif ($_GET['action'] === "article") { // Article
 		//require "views/frontend/template_article.php";
-		getPost($_GET['id']);
+		if (isset($_GET['id']))
+			getPost($_GET['id']);
+		else
+			header('Location: index.php?action=accueil');
 	}
 	elseif ($_GET['action'] === "categorie" && isset($_GET['cat'])) { // Categorie
 		listPostsCategory($_GET['cat']);
@@ -18,4 +21,7 @@ if (isset($_GET['action'])) {
 }
 elseif (isset($_GET['newEmail'])) {
 	newEmail($_GET['newEmail']);
+}
+else {
+	header('Location: index.php?action=accueil');
 }

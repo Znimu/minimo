@@ -3,6 +3,7 @@
 // Chargement des classes
 require_once('models/PostManager.php');
 require_once('models/EmailManager.php');
+require_once('models/CommentManager.php');
 
 function get2Posts()
 {
@@ -28,11 +29,11 @@ function listPostsCategory($category)
 function getPost()
 {
     $postManager = new Minimo\Models\PostManager();
-    //$commentManager = new Minimo\Models\CommentManager();
+    $commentManager = new Minimo\Models\CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
     $img = $postManager->getImg($_GET['id']);
-    //$comments = $commentManager->getComments($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
 
     require('views/frontend/template_article.php');
 }

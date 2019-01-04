@@ -8,7 +8,7 @@ while ($data = $posts->fetch())
 ?>
     <div class="news">
         <h3>
-            <a class="" href="?action=post&post=<?= htmlspecialchars($data['id']) ?>">
+            <a class="" href="?action=article&id=<?= htmlspecialchars($data['id']) ?>">
                 <h3><?= htmlspecialchars($data['post_title']) ?></h3>
             </a>
         </h3>

@@ -72,7 +72,13 @@
                     <img class="comment-img" src="public/img/upload/Avatar01.png" />
                 </div>
                 <div class="medium-11 cell">
-                    <textarea class="comment-input" placeholder="JOIN THE DISCUSSION"></textarea>
+                    <form id="formNewComment" name="formNewComment" action="?action=newComment" method="post">
+                        <input class="comment-input" id="comment_name" name="comment_name" placeholder="NAME" />
+                        <input class="comment-input" id="comment_email" name="comment_email" placeholder="E-MAIL" />
+                        <br /><br />
+                        <textarea class="comment-textarea" placeholder="JOIN THE DISCUSSION"></textarea>
+                        <input class="comment-btn-submit" type="submit" value="Enregistrer ce commentaire" />
+                    </form>
                 </div>
             </div>
         </div>

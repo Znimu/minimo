@@ -219,10 +219,23 @@ a {
     margin-bottom: 50px;
 }
 
-.comment-input {
+.comment-textarea {
     border-radius: 5px;
     padding: 15px 20px;
     height: 70px;
+}
+
+.comment-input {
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    padding: 15px 20px;
+    width: 48%;
+}
+
+.comment-btn-submit {
+    border-radius: 5px;
+    border:1px solid #cccccc;
+    padding: 5px 10px;
 }
 
 .top-post {

@@ -22,9 +22,9 @@
 		<div class="medium-3 cell">&nbsp;</div>
 		<div class="medium-6 cell">
 			<h1 class="centred newsletter-title">Sign up for our newsletter !</h1>
-			<form id="formNewEmail" name="formNeWEmail" action="index.php?action=newEmail">
+			<form id="formNewEmail" name="formNeWEmail" action="#" method="post">
 				<input id="newEmail" name="newEmail" class="input-newsletter" type="text" placeholder="Enter a valid email adress" />
-				<input type="button" value="+" class="btn-submit-newEmail" />
+				<input id="btnNewEmail" type="button" value="+" class="btn-submit-newEmail" />
 			</form>
 		</div>
 		<div class="medium-3 cell"></div>

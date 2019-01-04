@@ -38,13 +38,6 @@ function getPost()
     require('views/frontend/template_article.php');
 }
 
-function newEmail($email)
-{
-    $emailManager = new Minimo\Models\EmailManager();
-    $emailManager->newEmail($email);
-    header("Location: index.php?action=accueil");
-}
-
 function addComment($postId, $author, $comment)
 {
     $commentManager = new Minimo\Model\CommentManager();

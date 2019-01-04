@@ -9,7 +9,7 @@
                 for ($i = 0; $i < 3; $i++) {
             ?>
             <div class="medium-4 cell">
-                <a class="see-more-link" href="#">
+                <a class="see-more-link" href="?action=article&id=<?= $data3Posts[$i]['id'] ?>">
                     <img class="see-more-img" src="public/img/<?= $img3Posts[$i]['post_name'] ?>" />
                     <h3><?= $data3Posts[$i]['post_title'] ?></h3>
                 </a>

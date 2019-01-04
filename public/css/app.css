@@ -120,15 +120,23 @@ a {
     box-shadow: none;
 }
 
+.btn-submit-newEmail {
+    background: none;
+    border: none;
+    float: right;
+    margin-top: -110px;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
 .button-load {
     padding: 22px 33px;
     border: 1px solid #646464;
     color: #646464;
     margin: auto;
-    margin-top: 170px;
+    margin-top: 140px;
     margin-bottom: 140px;
     background: none;
-    cursor: pointer;
 }
 
 .block-footer {

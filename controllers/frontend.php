@@ -2,6 +2,7 @@
 
 // Chargement des classes
 require_once('models/PostManager.php');
+require_once('models/EmailManager.php');
 
 function get2Posts()
 {
@@ -34,6 +35,13 @@ function getPost()
     //$comments = $commentManager->getComments($_GET['id']);
 
     require('views/frontend/template_article.php');
+}
+
+function newEmail($email)
+{
+    $emailManager = new Minimo\Models\EmailManager();
+    $emailManager->newEmail($email);
+    header("Location: index.php?action=accueil");
 }
 
 function addComment($postId, $author, $comment)

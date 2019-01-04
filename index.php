@@ -16,3 +16,6 @@ if (isset($_GET['action'])) {
 		listPostsCategory($_GET['cat']);
 	}
 }
+elseif (isset($_GET['newEmail'])) {
+	newEmail($_GET['newEmail']);
+}

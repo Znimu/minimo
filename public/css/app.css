@@ -38,6 +38,7 @@ h2 {
 
 h3 {
     font-family: font_titles;
+    text-transform: none;
     color: #626262;
     margin: 20px 0 30px 0;
     font-size: 1.2em;
@@ -127,6 +128,7 @@ a {
     margin-top: 170px;
     margin-bottom: 140px;
     background: none;
+    cursor: pointer;
 }
 
 .block-footer {
@@ -227,6 +229,7 @@ a {
 
 .article-pub {
     margin-top: 35px;
+    margin-bottom: 35px;
 }
 
 .see-more-link {

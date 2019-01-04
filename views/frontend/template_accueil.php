@@ -5,35 +5,14 @@
 
 <div class="grid-container">
 	<div class="grid-x grid-margin-x">
-		<div class="medium-6 cell">
-			<img class="img-demi" src="public/img/02_festival.png" />
-			<a class="tiny-article-link-category">Lifestyle</a>
-			<h1>More than just a music festival</h1>
-			<p>Haec et huius modi quaedam et huius modi quaedam et huius modi quaedam innumerabilia ultrix facinorum innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens.</p>
-		</div>
-
-		<div class="medium-6 cell">
-			<img class="img-demi" src="public/img/03_caffee.png" />
-			<a class="tiny-article-link-category">Lifestyle</a>
-			<h1>Life tastes better with coffee</h1>
-			<p>Haec et huius modi et huius modi quaedam quaedam innumerabilia et huius modi quaedam ultrix facinorum innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens.</p>
-		</div>
-	</div>
-
-	<div class="grid-x grid-margin-x">
-		<div class="medium-6 cell">
-			<img class="img-demi" src="public/img/04_pont.png" />
-			<a class="tiny-article-link-category">Lifestyle</a>
-			<h1>American dream</h1>
-			<p>Haec et huius modi quaedam et huius modi quaedam et huius modi quaedam innumerabilia ultrix facinorum innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens.</p>
-		</div>
-
-		<div class="medium-6 cell">
-			<img class="img-demi" src="public/img/05_montagnes.png" />
-			<a class="tiny-article-link-category">Lifestyle</a>
-			<h1>A day exploring the Alps</h1>
-			<p>Haec et huius modi et huius modi quaedam quaedam innumerabilia et huius modi quaedam ultrix facinorum innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens.</p>
-		</div>
+		<?php
+			$data1 = $data[0];
+			$img1 = $img[0];
+			require('template_tiny_article.php');
+			$data1 = $data[1];
+			$img1 = $img[1];
+			require('template_tiny_article.php');
+		?>
 	</div>
 </div>
 
@@ -51,22 +30,6 @@
 </div>
 
 <div class="grid-container">
-	<div class="grid-x grid-margin-x">
-		<div class="medium-6 cell">
-			<img class="img-demi" src="public/img/06_girl.png" />
-			<a>Lifestyle</a>
-			<h1>Top 10 songs for running</h1>
-			<p>Haec et huius modi quaedam et huius modi quaedam et huius modi quaedam innumerabilia ultrix facinorum innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens.</p>
-		</div>
-
-		<div class="medium-6 cell">
-			<img class="img-demi" src="public/img/07_route_glace.png" />
-			<a>Lifestyle</a>
-			<h1>Cold winter days</h1>
-			<p>Haec et huius modi et huius modi quaedam quaedam innumerabilia et huius modi quaedam ultrix facinorum innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens.</p>
-		</div>
-	</div>
-
 	<div class="grid-x grid-margin-x">
 		<div class="medium-5 cell">&nbsp;</div>
 		<div class="medium-2 cell">

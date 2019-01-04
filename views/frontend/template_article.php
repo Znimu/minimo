@@ -11,13 +11,17 @@
             </div>
         
             <div class="medium-9 cell">
-                <a>Photodiary</a>
-                <h1>The perfect week-end gateway</h1>
-                <p>Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia. Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia. Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime.<br /><br />Numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia.</p>
-                <img class="img-page" src="public/img/08_woman.png" />
-                <p class="italic">Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo.</p>
-                <p>Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia. Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia. Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo duplici etiam Nemesim appellamus: ius quoddam sublime.<br /><br />Numinis efficacis, humanarum mentium opinione lunari circulo superpositum, vel ut definiunt alii, substantialis tutela generali potentia.</p>
-                <br />
+                <img class="img-top" src="public/img/<?= $img['post_name'] ?>" />
+
+                <a href="?action=categorie&cat=<?= $post['post_category'] ?>"><?= $post['post_category'] ?></a>
+                <h1><?= $post['post_title'] ?></h1>
+                <p><?= $post['post_content'] ?></p>
+                
+                <div class="share">SHARE 
+                    <i class="fab fa-facebook-f"></i> 
+                    <i class="fab fa-google-plus-g"></i> 
+                    <i class="fab fa-pinterest"></i>
+                </div>
             </div>
             <div class="medium-3 cell"><!-- SIDE BLOCK -->
                 <img class="sidebar-img" src="public/img/09_me.png" />
@@ -38,7 +42,7 @@
                     <li><a><h3 class="side-block-title">American dream</h3><span class="side-block-nb-comment">19 comments</span></a></li>
                 </ul>
                 <ul>
-                    <li><a><h3 class="side-block-title">COld winter days</h3><span class="side-block-nb-comment">17 comments</span></a></li>
+                    <li><a><h3 class="side-block-title">Cold winter days</h3><span class="side-block-nb-comment">17 comments</span></a></li>
                 </ul>
 
                 <img class="article-pub" src="public/img/Pub.png" />

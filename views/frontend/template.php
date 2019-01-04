@@ -16,10 +16,10 @@
             </div>
             <div class="top-bar-right">
                 <ul class="dropdown menu">
-                    <li><a href="?action=category&cat=styleDeVie">Lifestyle</a></li>
-                    <li><a href="?action=category&cat=photoJournal">Photodiary</a></li>
-                    <li><a href="?action=category&cat=musique">Music</a></li>
-                    <li><a href="?action=category&cat=visites">Travel</a></li>
+                    <li><a href="?action=categorie&cat=styleDeVie">Lifestyle</a></li>
+                    <li><a href="?action=categorie&cat=photoJournal">Photodiary</a></li>
+                    <li><a href="?action=categorie&cat=musique">Music</a></li>
+                    <li><a href="?action=categorie&cat=visites">Travel</a></li>
                 </ul>
             </div>
 

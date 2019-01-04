@@ -3,12 +3,16 @@
 // Chargement des classes
 require_once('models/PostManager.php');
 
-function listPosts()
+function get2Posts()
 {
     $postManager = new Minimo\Models\PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->get2Posts(); // Appel d'une fonction de cet objet
+    $data[] = $posts->fetch();
+    $data[] = $posts->fetch();
+    $img[] = $postManager->getImg($data[0]['id']);
+    $img[] = $postManager->getImg($data[1]['id']);
 
-    require('views/frontend/template_category.php');
+    require('views/frontend/template_accueil.php');
 }
 
 function listPostsCategory($category)
@@ -20,15 +24,16 @@ function listPostsCategory($category)
     require('views/frontend/template_page.php');
 }
 
-function post()
+function getPost()
 {
-    $postManager = new Minimo\PostManager();
-    $commentManager = new Minimo\CommentManager();
+    $postManager = new Minimo\Models\PostManager();
+    //$commentManager = new Minimo\Models\CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    $img = $postManager->getImg($_GET['id']);
+    //$comments = $commentManager->getComments($_GET['id']);
 
-    require('view/frontend/postView.php');
+    require('views/frontend/template_article.php');
 }
 
 function addComment($postId, $author, $comment)

@@ -1,8 +1,10 @@
 <div class="grid-container">
 <?php
+$nb_articles = 0;
 echo '<div class="see-more-title category">Category : ' . $category . "</div>";
 while ($data = $posts->fetch())
 {
+    $nb_articles++;
 ?>
     <div class="news">
         <h3>
@@ -14,5 +16,7 @@ while ($data = $posts->fetch())
 <?php
 }
 $posts->closeCursor();
+if ($nb_articles === 0)
+    echo "<p>Aucun article trouvé dans cette catégorie.</p>";
 ?>
 </div>

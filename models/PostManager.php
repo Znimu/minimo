@@ -6,14 +6,15 @@ require_once("Manager.php");
 
 class PostManager extends Manager
 {
-    public function getPosts()
+    public function get2Posts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT *, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr
-                            FROM posts
-                            WHERE post_status = "publish"
-                            AND post_type = "article"
-                            ORDER BY post_date DESC LIMIT 0, 5');
+        $sql = 'SELECT *, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr
+                FROM posts
+                WHERE post_status = "publish"
+                AND post_type = "article"
+                ORDER BY post_date DESC LIMIT 0, 2';
+        $req = $db->query($sql);
 
         return $req;
     }
@@ -35,24 +36,26 @@ class PostManager extends Manager
     public function getPost($postId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts WHERE id = ?');
+        $req = $db->prepare('SELECT *, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS post_date_fr FROM posts WHERE id = ?');
         $req->execute(array($postId));
         $post = $req->fetch();
 
         return $post;
     }
 
-    public function getFiles($postId)
+    public function getImg($postId)
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT *
-                            FROM posts, posts_posts
-                            WHERE post_status = "publish"
-                            AND post_type = "file"
-                            AND ' . $postId . ' = post_id1
-                            AND posts.id = post_id2
-                            ORDER BY creation_date DESC LIMIT 0, 5');
+        $sql = 'SELECT *
+                FROM posts, posts_posts
+                WHERE post_id1 = ?
+                AND post_id2 = id
+                ORDER BY post_date
+                DESC LIMIT 0, 5';
+        $req = $db->prepare($sql);
+        $req->execute(array($postId));
+        $post = $req->fetch();
 
-        return $req;
+        return $post;
     }
 }

@@ -1,4 +1,4 @@
-<?php $title = "Minimo - Page"; ?>
+<?php $title = "Minimo - " . $post['post_title']; ?>
 
 <?php ob_start(); ?>
     <br>

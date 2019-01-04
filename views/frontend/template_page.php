@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <?php
-if ($action === "category") {
+if ($action === "categorie") {
     require('template_category.php');
 }
 else {

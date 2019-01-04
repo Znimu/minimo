@@ -26,12 +26,19 @@ function listPostsCategory($category)
 
 function getPost()
 {
+    $articleEnCours = $_GET['id'];
     $postManager = new Minimo\Models\PostManager();
     $commentManager = new Minimo\Models\CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
-    $img = $postManager->getImg($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    $post = $postManager->getPost($articleEnCours);
+    $img = $postManager->getImg($articleEnCours);
+    $comments = $commentManager->getComments($articleEnCours);
+
+    $posts = $postManager->get3Posts($articleEnCours); // Appel d'une fonction de cet objet
+    for ($i = 0; $i < 3; $i++) {
+        $data3Posts[] = $posts->fetch();
+        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
+    }
 
     require('views/frontend/template_article.php');
 }

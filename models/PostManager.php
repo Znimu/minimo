@@ -19,6 +19,20 @@ class PostManager extends Manager
         return $req;
     }
 
+    public function get3Posts($postId)
+    {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr
+                FROM posts
+                WHERE post_status = "publish"
+                AND post_type = "article"
+                AND id <> ' . $postId . '
+                ORDER BY post_date DESC LIMIT 0, 3';
+        $req = $db->query($sql);
+
+        return $req;
+    }
+
     public function getPostsCategory($postCat)
     {
         $db = $this->dbConnect();

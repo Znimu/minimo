@@ -6,8 +6,7 @@ if (isset($_GET['action'])) {
 		get2Posts();
 	}
 	elseif ($_GET['action'] === "page") {// Page
-		$action = $_GET['action'];
-		require "views/frontend/template_page.php";
+		get3PostsMore();
 	}
 	elseif ($_GET['action'] === "article") { // Article
 		if (isset($_GET['id']))

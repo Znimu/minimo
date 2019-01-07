@@ -19,7 +19,7 @@ class PostManager extends Manager
         return $req;
     }
 
-    public function get3Posts($postId)
+    public function get3Posts($postId = 0) // 3 articles, article affiché excepté
     {
         $db = $this->dbConnect();
         $sql = 'SELECT *, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr

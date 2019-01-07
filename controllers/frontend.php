@@ -49,6 +49,21 @@ function getPost()
     require('views/frontend/template_article.php');
 }
 
+function get3PostsMore()
+{
+    $action = "page";
+    $articleEnCours = 0;
+    $postManager = new Minimo\Models\PostManager();
+
+    $posts = $postManager->get3Posts($articleEnCours);
+    for ($i = 0; $i < 3; $i++) {
+        $data3Posts[] = $posts->fetch();
+        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
+    }
+
+    require "views/frontend/template_page.php";
+}
+
 function addComment($postId, $author, $comment)
 {
     $commentManager = new Minimo\Model\CommentManager();

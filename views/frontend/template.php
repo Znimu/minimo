@@ -11,9 +11,13 @@
         
     <body>
         <div class="grid-container">
-            <div class="top-bar-left grid-x grid-margin-x">
-                <img class="img-logo" src="public/img/logo_minimo.png" />
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <a href="index.php">
+                    <img class="img-logo" src="public/img/logo_minimo.png" />
+                </a>
             </div>
+
             <div class="top-bar-right">
                 <ul class="dropdown menu">
                     <li><a href="?action=categorie&cat=styleDeVie">Lifestyle</a></li>
@@ -22,8 +26,7 @@
                     <li><a href="?action=categorie&cat=visites">Travel</a></li>
                 </ul>
             </div>
-
-            <div class="clear-both"></div>
+        </div>
         </div>
         
         <?= $content ?>

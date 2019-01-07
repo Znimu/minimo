@@ -66,14 +66,12 @@ a {
     margin-left: 15px;
 }
 
-.top-bar-left, .top-bar-right {
-    margin-top: 40px;
+.top-bar, .top-bar ul {
+    background: none;
 }
 
-.top-bar-right {
-    float: right;
-    display: inline-block;
-    margin-top: -30px;
+.top-bar {
+    padding: .5rem 0;
 }
 
 .clear-both {

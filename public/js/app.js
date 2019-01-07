@@ -64,8 +64,11 @@ $(document).ready(function() {
             $('#comment_name').val("");
             $('#comment_email').val("");
             $('#comment_comment').val("");
-            alert("Commentaire ajouté : " + msg);
-            $('#comments').append(msg);
+
+            if (msg === "Post ID vide" || msg === "Nom vide" || msg === "Email vide" || msg === "Commentaire vide")
+                alert("Commentaire non ajouté : " + msg);
+            else
+                $('#comments').append(msg);
         })
         .fail(function(msg) {
           alert("Error : " + msg.responseText);

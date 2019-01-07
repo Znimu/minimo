@@ -53,6 +53,5 @@
     <script src="public/js/vendor/jquery.js"></script>
     <script src="public/js/vendor/what-input.js"></script>
     <script src="public/js/vendor/foundation.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="public/js/app.js"></script>
 </html>

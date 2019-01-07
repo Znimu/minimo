@@ -6,11 +6,7 @@
 <div class="grid-container">
 	<div class="grid-x grid-margin-x">
 		<?php
-			$data1 = $data[0];
-			$img1 = $img[0];
 			require('template_tiny_article.php');
-			$data1 = $data[1];
-			$img1 = $img[1];
 			require('template_tiny_article.php');
 		?>
 	</div>

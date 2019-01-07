@@ -6,12 +6,8 @@ require_once('models/ContactManager.php');
 
 function get2Posts()
 {
-    $postManager = new Minimo\Models\PostManager(); // Création d'un objet
-    $posts = $postManager->get2Posts(); // Appel d'une fonction de cet objet
-    $data[] = $posts->fetch();
-    $data[] = $posts->fetch();
-    $img[] = $postManager->getImg($data[0]['id']);
-    $img[] = $postManager->getImg($data[1]['id']);
+    $postManager = new Minimo\Models\PostManager();
+    $posts = $postManager->get2Posts();
 
     require('views/frontend/template_accueil.php');
 }

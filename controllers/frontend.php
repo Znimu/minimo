@@ -19,7 +19,13 @@ function listPostsCategory($category)
 {
     $postManager = new Minimo\Models\PostManager();
     $posts = $postManager->getPostsCategory($category);
-    $action = "category";
+    $action = "categorie";
+
+    $posts = $postManager->get3Posts(0);
+    for ($i = 0; $i < 3; $i++) {
+        $data3Posts[] = $posts->fetch();
+        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
+    }
 
     require('views/frontend/template_page.php');
 }
@@ -34,7 +40,7 @@ function getPost()
     $img = $postManager->getImg($articleEnCours);
     $comments = $commentManager->getComments($articleEnCours);
 
-    $posts = $postManager->get3Posts($articleEnCours); // Appel d'une fonction de cet objet
+    $posts = $postManager->get3Posts($articleEnCours);
     for ($i = 0; $i < 3; $i++) {
         $data3Posts[] = $posts->fetch();
         $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);

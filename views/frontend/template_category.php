@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container category-container">
 <?php
 $nb_articles = 0;
 echo '<div class="see-more-title category">Category : ' . $category . "</div>";

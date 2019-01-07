@@ -15,8 +15,13 @@ if (isset($_GET['action'])) {
 		else
 			header('Location: index.php?action=accueil');
 	}
-	elseif ($_GET['action'] === "categorie" && isset($_GET['cat'])) { // Categorie
-		listPostsCategory($_GET['cat']);
+	elseif ($_GET['action'] === "categorie") {
+		if (isset($_GET['cat'])) { // Categorie
+			listPostsCategory($_GET['cat']);
+		}
+		else {
+			header('Location: index.php?action=accueil');
+		}
 	}
 	elseif ($_GET['action'] === "newComment") { // New Comment
 		echo "New comment !";

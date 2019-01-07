@@ -16,4 +16,3 @@ else {
 
     echo $_POST['email'];
 }
-?>

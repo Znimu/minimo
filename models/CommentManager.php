@@ -12,17 +12,17 @@ class CommentManager extends Manager
         $sql = 'SELECT *, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr
                 FROM comments
                 WHERE post_id = ?
-                ORDER BY comment_date DESC';
+                ORDER BY comment_date ASC';
         $comments = $db->prepare($sql);
         $comments->execute(array($postId));
 
         return $comments;
     }
 
-    public function postComment($postId, $name, $email, $comment)
+    public function newComment($postId, $name, $email, $comment)
     {
         $db = $this->dbConnect();
-        $sql = 'INSERT INTO comments(post_id, comment_name, comment_email, comment, comment_date)
+        $sql = 'INSERT INTO comments(post_id, comment_name, comment_email, comment_content, comment_date)
                 VALUES(?, ?, ?, ?, NOW())';
         $comments = $db->prepare($sql);
         $affectedLines = $comments->execute(array($postId, $name, $email, $comment));

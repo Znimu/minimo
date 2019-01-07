@@ -17,4 +17,3 @@ require('../views/frontend/template_tiny_article.php');
 
 echo '</div>
     </div>';
-?>

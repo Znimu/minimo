@@ -54,7 +54,7 @@
 
     
     <div class="grid-container">
-        <div class="comments">
+        <div id="comments" class="comments">
             <div class="grid-x grid-margin-x">
                 <div class="medium-12 cell">
                     <div class="see-more-title" href="#">2 comments</div>
@@ -66,18 +66,21 @@
                     require "template_comment.php";
                 }
             ?>
+        </div>
 
+        <div class="comments-form">
             <div class="grid-x grid-margin-x">
                 <div class="medium-1 cell">
                     <img class="comment-img" src="public/img/upload/Avatar01.png" />
                 </div>
                 <div class="medium-11 cell">
                     <form id="formNewComment" name="formNewComment" action="?action=newComment" method="post">
+                        <input type="hidden" id="post_id" name="post_id" value="<?= $post['id'] ?>" />
                         <input class="comment-input" id="comment_name" name="comment_name" placeholder="NAME" />
                         <input class="comment-input" id="comment_email" name="comment_email" placeholder="E-MAIL" />
                         <br /><br />
-                        <textarea class="comment-textarea" placeholder="JOIN THE DISCUSSION"></textarea>
-                        <input class="comment-btn-submit" type="submit" value="Enregistrer ce commentaire" />
+                        <textarea class="comment-textarea" placeholder="JOIN THE DISCUSSION" id="comment_comment" name="comment_comment"></textarea>
+                        <input id="comment-btn-submit" class="comment-btn-submit" type="buttom" value="Enregistrer ce commentaire" />
                     </form>
                 </div>
             </div>

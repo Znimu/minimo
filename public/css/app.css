@@ -200,6 +200,11 @@ a {
     padding-bottom: 70px;
 }
 
+.comments-form {
+    padding-top: 0px;
+    padding-bottom: 70px;
+}
+
 .comment-img {
     border-radius: 50%;
 }
@@ -222,13 +227,15 @@ a {
     border-radius: 5px;
     padding: 15px 20px;
     height: 70px;
+    box-shadow: none;
 }
 
 .comment-input {
     border-radius: 5px;
     border: 1px solid #CCCCCC;
     padding: 15px 20px;
-    width: 48%;
+    width: 49.5%;
+    box-sizing: border-box;
 }
 
 .comment-btn-submit {

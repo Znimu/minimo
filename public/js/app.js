@@ -42,4 +42,44 @@ $(document).ready(function() {
           alert("Error : " + msg);
         });
     });
+
+    // AJOUT COMMENTAIRE
+    function addComment() {
+        var post_id = $('#post_id').val();
+        var comment_name = $('#comment_name').val();
+        var comment_email = $('#comment_email').val();
+        var comment = $('#comment_comment').val();
+    
+        $.ajax({
+            method: "POST",
+            url: "controllers/commentController.php",
+            data: {
+                postId: post_id,
+                name: comment_name,
+                email: comment_email,
+                comment: comment
+            }
+        })
+        .done(function(msg) {
+            $('#comment_name').val("");
+            $('#comment_email').val("");
+            $('#comment_comment').val("");
+            alert("Commentaire ajouté : " + msg);
+            $('#comments').append(msg);
+        })
+        .fail(function(msg) {
+          alert("Error : " + msg.responseText);
+        });
+    }
+
+    $('#comment-btn-submit').on("click", function() {
+        addComment();
+    });
+
+    $('#formNewComment').submit(function(e) {
+        e.preventDefault();
+        var key = e.which;
+
+        addComment();
+    });
 });

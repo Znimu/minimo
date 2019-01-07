@@ -2,19 +2,22 @@
 <?php
 $nb_articles = 0;
 echo '<div class="see-more-title category">Category : ' . $category . "</div>";
-while ($data = $posts->fetch())
-{
+
+while (isset($data[$nb_articles])) {
+    if ($nb_articles % 2 === 0)
+        echo '<div class="grid-container">
+                <div class="grid-x grid-margin-x cell">';
+    $data1 = $data[$nb_articles];
+    $img1 = $img[$nb_articles];
+    require('template_tiny_article.php');
+    if ($nb_articles % 2 === 1)
+        echo "</div></div>";
+    
     $nb_articles++;
-?>
-    <div class="news">
-        <h3>
-            <a class="" href="?action=article&id=<?= htmlspecialchars($data['id']) ?>">
-                <h3><?= htmlspecialchars($data['post_title']) ?></h3>
-            </a>
-        </h3>
-    </div>
-<?php
 }
+if ($nb_articles % 2 === 1)
+    echo "</div></div>";
+
 $posts->closeCursor();
 if ($nb_articles === 0)
     echo "<p>Aucun article trouvé dans cette catégorie.</p>";

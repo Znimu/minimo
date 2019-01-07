@@ -19,9 +19,9 @@ else {
     <i class="fab fa-pinterest"></i>
 </div>
 
+<?php require('template_more_articles.php'); ?>
 <?php } ?>
 
-<?php require('template_more_articles.php'); ?>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

@@ -20,11 +20,11 @@ function listPostsCategory($category)
     $postManager = new Minimo\Models\PostManager();
     $posts = $postManager->getPostsCategory($category);
     $action = "categorie";
-
-    $posts = $postManager->get3Posts(0);
-    for ($i = 0; $i < 3; $i++) {
-        $data3Posts[] = $posts->fetch();
-        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
+    $nb_posts = 0;
+    while ($post = $posts->fetch()) {
+        $data[] = $post;
+        $img[] = $postManager->getImg($data[$nb_posts]['id']);
+        $nb_posts++;
     }
 
     require('views/frontend/template_page.php');

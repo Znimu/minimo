@@ -2,6 +2,7 @@
 // Chargement des classes
 require_once('models/PostManager.php');
 require_once('models/CommentManager.php');
+require_once('models/ContactManager.php');
 
 function get2Posts()
 {
@@ -49,9 +50,8 @@ function getPost()
     require('views/frontend/template_article.php');
 }
 
-function get3PostsMore()
+function get3PostsMore($action)
 {
-    $action = "page";
     $articleEnCours = 0;
     $postManager = new Minimo\Models\PostManager();
 
@@ -64,6 +64,24 @@ function get3PostsMore()
     require "views/frontend/template_page.php";
 }
 
+function newContact($action, $erreur) {
+    $articleEnCours = 0;
+    $postManager = new Minimo\Models\PostManager();
+
+    $posts = $postManager->get3Posts($articleEnCours);
+    for ($i = 0; $i < 3; $i++) {
+        $data3Posts[] = $posts->fetch();
+        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
+    }
+
+    if ($erreur === "") {
+        $contactManager = new Minimo\Models\ContactManager();
+        $contactManager->newContact($_POST['contact_name'], $_POST['contact_email'], $_POST['contact_message']);
+    }
+
+    require "views/frontend/template_page.php";
+}
+/*
 function addComment($postId, $author, $comment)
 {
     $commentManager = new Minimo\Model\CommentManager();
@@ -76,7 +94,7 @@ function addComment($postId, $author, $comment)
     else {
         header('Location: index.php?action=post&id=' . $postId);
     }
-}
+}*/
 
 function editComment($commentId)
 {

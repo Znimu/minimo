@@ -58,6 +58,11 @@ a {
 }
 
 /* ACCUEIL */
+.menu-top {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .menu li a {
     color: #252525;
 }
@@ -197,7 +202,7 @@ a {
 
 .comments {
     padding-top: 40px;
-    padding-bottom: 70px;
+    padding-bottom: 30px;
 }
 
 .comments-form {
@@ -238,7 +243,7 @@ a {
     box-sizing: border-box;
 }
 
-.comment-btn-submit {
+.comment-btn-submit, .btn-formContact {
     border-radius: 5px;
     border:1px solid #cccccc;
     padding: 10px 25px;
@@ -293,12 +298,48 @@ a {
 
 .category {
     margin-top: 75px;
-    margin-bottom: 0px;
+    margin-bottom: -50px;
+}
+
+.div-formContact {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact, .erreur-new-contact {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+.contact-textarea {
+    border-radius: 5px;
+    padding: 15px 20px;
+    height: 70px;
+    box-shadow: none;
+}
+
+.contact-input {
+    display: inline;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    padding: 15px 20px;
+    width: 49.5%;
+    box-sizing: border-box;
+}
+
+.erreur-p-centered {
+    text-align: center;
 }
 
 /* RESPONSIVE */
 @media print, screen and (max-width: 640px) {
     .comment-input {
+        width: 100%;
+    }
+
+    .contact-input {
         width: 100%;
     }
 }

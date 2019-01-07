@@ -2,31 +2,40 @@
 require('controllers/frontend.php');
 
 if (isset($_GET['action'])) {
-	if ($_GET['action'] === "accueil") { // Accueil
+	$action = $_GET['action'];
+	if ($action === "accueil") { // Accueil
 		get2Posts();
 	}
-	elseif ($_GET['action'] === "page") {// Page
-		get3PostsMore();
+	elseif ($action === "page" || $action === "contact") { // Page
+		get3PostsMore($action);
 	}
-	elseif ($_GET['action'] === "article") { // Article
-		if (isset($_GET['id']))
-			getPost($_GET['id']);
+	elseif ($action === "article") { // Article
+		if (isset($_GET['id']) && intval($_GET['id']) === $_GET['id'])
+			getPost(intval($_GET['id']));
 		else
 			header('Location: index.php?action=accueil');
 	}
-	elseif ($_GET['action'] === "categorie") {
-		if (isset($_GET['cat'])) { // Categorie
+	elseif ($action === "categorie") { // Categorie
+		if (isset($_GET['cat'])) {
 			listPostsCategory($_GET['cat']);
 		}
 		else {
 			header('Location: index.php?action=accueil');
 		}
 	}
-	elseif ($_GET['action'] === "newComment") { // New Comment
-		echo "New comment !";
+	elseif ($action === "newContact") { // Enregistrement d'un message de contact
+		$erreur = "";
+		if (!isset($_POST['contact_name']) || $_POST['contact_name'] === "")
+			$erreur = "Nom vide";
+		elseif (!isset($_POST['contact_email']) || $_POST['contact_email'] === "")
+			$erreur = "E-mail vide";
+		elseif (!isset($_POST['contact_message']) || $_POST['contact_message'] === "")
+			$erreur = "Message vide";
+
+		newContact("new contact", $erreur);
 	}
-	elseif ($_GET['action'] === "newEmail") {
-		newEmail($_POST['newEmail']);
+	else {
+		header('Location: index.php?action=accueil');
 	}
 }
 else {

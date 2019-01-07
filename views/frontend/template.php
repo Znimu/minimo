@@ -11,7 +11,7 @@
         
     <body>
         <div class="grid-container">
-            <div class="top-bar">
+            <div class="top-bar menu-top">
                 <div class="top-bar-left">
                     <a href="index.php">
                         <img class="img-logo" src="public/img/logo_minimo.png" />
@@ -38,6 +38,7 @@
                         <ul class="menu">
                             <li><a class="footer-links" href="#">Terms and conditions</a></li>
                             <li><a class="footer-links" href="#">Privacy</a></li>
+                            <li><a class="footer-links" href="?action=contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="top-bar-right">Follow 

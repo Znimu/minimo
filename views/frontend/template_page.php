@@ -1,10 +1,16 @@
-<?php $title = "Minimo - Page"; ?>
+<?php $title = "Minimo - Page " . $action; ?>
 
 <?php ob_start(); ?>
 
 <?php
 if ($action === "categorie") {
     require('template_category.php');
+}
+elseif ($action === "contact") {
+    require('template_contact.php');
+}
+elseif ($action === "new contact") {
+    require('template_new_contact.php');
 }
 else {
     require('template_main_article.php');

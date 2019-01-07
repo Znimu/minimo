@@ -261,10 +261,21 @@ a {
     text-transform: none;
 }
 
-.footer-float-right {
-    float: right;
-    padding: .7rem 1rem;
-    margin-top: -40px;
+.footer-nav-left {
+    order: 1;
+}
+
+.footer-nav-right {
+    margin-right: 1rem;
+    order: 2;
+}
+
+.footer-nav-left, .footer-nav-right {
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-right: .625rem;
+    padding-left: .625rem;
 }
 
 .category-container {

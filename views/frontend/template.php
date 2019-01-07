@@ -11,38 +11,40 @@
         
     <body>
         <div class="grid-container">
-        <div class="top-bar">
-            <div class="top-bar-left">
-                <a href="index.php">
-                    <img class="img-logo" src="public/img/logo_minimo.png" />
-                </a>
-            </div>
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <a href="index.php">
+                        <img class="img-logo" src="public/img/logo_minimo.png" />
+                    </a>
+                </div>
 
-            <div class="top-bar-right">
-                <ul class="dropdown menu">
-                    <li><a href="?action=categorie&cat=styleDeVie">Lifestyle</a></li>
-                    <li><a href="?action=categorie&cat=photoJournal">Photodiary</a></li>
-                    <li><a href="?action=categorie&cat=musique">Music</a></li>
-                    <li><a href="?action=categorie&cat=visites">Travel</a></li>
-                </ul>
+                <div class="top-bar-right">
+                    <ul class="dropdown menu">
+                        <li><a href="?action=categorie&cat=styleDeVie">Lifestyle</a></li>
+                        <li><a href="?action=categorie&cat=photoJournal">Photodiary</a></li>
+                        <li><a href="?action=categorie&cat=musique">Music</a></li>
+                        <li><a href="?action=categorie&cat=visites">Travel</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </div>
         
         <?= $content ?>
 
         <div class="block-footer">
             <div class="grid-container">
-                <div class="grid-x grid-margin-x cell">
-                    <ul class="menu">
-                        <li><a class="footer-links" href="#">Terms and conditions</a></li>
-                        <li><a class="footer-links" href="#">Privacy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-float-right">Follow 
-                    <i class="fab fa-facebook-f"></i> 
-                    <i class="fab fa-twitter"></i> 
-                    <i class="fab fa-linkedin-in"></i>
+                <div class="top-bar">
+                    <div class="top-bar-left">
+                        <ul class="menu">
+                            <li><a class="footer-links" href="#">Terms and conditions</a></li>
+                            <li><a class="footer-links" href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-bar-right">Follow 
+                        <i class="fab fa-facebook-f"></i> 
+                        <i class="fab fa-twitter"></i> 
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
                 </div>
             </div>
         </div>

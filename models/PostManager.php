@@ -54,12 +54,21 @@ class PostManager extends Manager
     public function getPostsCategory($postCat)
     {
         $db = $this->dbConnect();
-        $sql = 'SELECT *
-                FROM posts
-                WHERE post_status = "publish"
-                AND post_type = "article"
-                AND post_category = "' . $postCat . '"
-                ORDER BY post_date DESC LIMIT 0, 5';
+        $sql = 'SELECT *,
+                    a.id AS article_id,
+                    a.post_title AS article_title,
+                    a.post_name AS article_name,
+                    a.post_content AS article_content,
+                    a.post_category AS article_category,
+                    f.post_title AS image_title,
+                    f.post_name AS image_name
+                FROM posts AS a
+                LEFT JOIN posts_posts AS pp ON a.id = post_id1
+                LEFT JOIN posts AS f ON f.id = post_id2
+                WHERE a.post_category = "' . $postCat . '"
+                AND a.post_status = "publish"
+                ORDER BY a.post_date DESC
+                LIMIT 0, 6';
         $req = $db->query($sql);
 
         return $req;

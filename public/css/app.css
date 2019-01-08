@@ -348,3 +348,19 @@ a {
         width: 100%;
     }
 }
+
+/* ADMIN */
+.admin-subtitle {
+    padding-left: 50px;
+}
+
+.td-modifier, .td-supprimer {
+    text-align: center;
+}
+.td-modifier i {
+    color: black;
+}
+.td-supprimer i {
+    color: red;
+    cursor: pointer;
+}

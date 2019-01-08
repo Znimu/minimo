@@ -13,42 +13,24 @@
         <div class="grid-container">
             <div class="top-bar menu-top">
                 <div class="top-bar-left">
-                    <a href="index.php">
+                    <a href="admin.php">
                         <img class="img-logo" src="public/img/logo_minimo.png" />
+                        <p class="admin-subtitle">(admin)</p>
                     </a>
                 </div>
 
                 <div class="top-bar-right">
                     <ul class="dropdown menu">
-                        <li><a href="?action=categorie&cat=styleDeVie">Lifestyle</a></li>
-                        <li><a href="?action=categorie&cat=photoJournal">Photodiary</a></li>
-                        <li><a href="?action=categorie&cat=musique">Music</a></li>
-                        <li><a href="?action=categorie&cat=visites">Travel</a></li>
+                        <li><a href="?action=articles">Articles</a></li>
+                        <li><a href="?action=images">Images</a></li>
+                        <li><a href="?action=contacts">Contacts</a></li>
+                        <li><a href="?action=newsletters">Newsletters</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         
         <?= $content ?>
-
-        <div class="block-footer">
-            <div class="grid-container">
-                <div class="top-bar">
-                    <div class="top-bar-left">
-                        <ul class="menu">
-                            <li><a class="footer-links" href="#">Terms and conditions</a></li>
-                            <li><a class="footer-links" href="#">Privacy</a></li>
-                            <li><a class="footer-links" href="?action=contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="top-bar-right">Follow 
-                        <i class="fab fa-facebook-f"></i> 
-                        <i class="fab fa-twitter"></i> 
-                        <i class="fab fa-linkedin-in"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
     </body>
 
     <script src="public/js/vendor/jquery.js"></script>

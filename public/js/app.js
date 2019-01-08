@@ -91,4 +91,13 @@ $(document).ready(function() {
 
         addComment();
     });
+
+    // ADMIN
+
+    // EMAILS
 });
+
+function deleteEmail(id) {
+    if (confirm("Voulez-vous vraiment effacer cet e-mail ?"))
+        window.location = "?action=effacerEmail&id=" + id;
+}

@@ -16,4 +16,42 @@ class EmailManager extends Manager
 
         return $req;
     }
+
+    public function getEmails() {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *
+                FROM newsletter';
+        $emails = $db->query($sql);
+
+        return $emails;
+    }
+
+    public function getEmail($id) {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *
+                FROM newsletter
+                WHERE id = ' . $id;
+        $email = $db->query($sql);
+
+        return $email;
+    }
+
+    public function modifierEmail($id, $email) {
+        $db = $this->dbConnect();
+        $sql = 'UPDATE newsletter
+                SET newsletter_email = "' . $email . '"
+                WHERE id = ' . $id;
+        $email = $db->query($sql);
+
+        return $email;
+    }
+
+    public function effacerEmail($id) {
+        $db = $this->dbConnect();
+        $sql = 'DELETE FROM newsletter
+                WHERE id = ' . $id;
+        $email = $db->query($sql);
+
+        return $email;
+    }
 }

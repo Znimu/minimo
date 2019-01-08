@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <div class="grid-container">
-	<h1> E-mails - édition</h1>
+	<h1>E-mails - suppression</h1>
 
     <?php
         if ($resu) {

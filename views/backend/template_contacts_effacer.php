@@ -1,18 +1,18 @@
-<?php $title = "Minimo Admin - E-mails"; ?>
+<?php $title = "Minimo Admin - Contacts"; ?>
 
 <?php ob_start(); ?>
 <div class="grid-container">
-	<h1>E-mails - édition</h1>
+	<h1>Contact - suppression</h1>
 
     <?php
         if ($resu) {
     ?>
-        <p>L'e-mail a bien été modifié.</p>
+        <p>Le contact a bien été effacé.</p>
     <?php
         }
         else {
     ?>
-        <p>Erreur : l'e-mail n'a pas été modifié.</p>
+        <p>Erreur : le contact n'a pas été effacé.</p>
     <?php
         }
     ?>

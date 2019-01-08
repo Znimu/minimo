@@ -91,13 +91,19 @@ $(document).ready(function() {
 
         addComment();
     });
-
-    // ADMIN
-
-    // EMAILS
 });
 
+
+// ADMIN
+
+// EMAILS
 function deleteEmail(id) {
     if (confirm("Voulez-vous vraiment effacer cet e-mail ?"))
         window.location = "?action=effacerEmail&id=" + id;
+}
+
+// CONTACTS
+function deleteContact(id) {
+    if (confirm("Voulez-vous vraiment effacer ce contact ?"))
+        window.location = "?action=effacerContact&id=" + id;
 }

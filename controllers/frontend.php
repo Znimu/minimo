@@ -36,6 +36,7 @@ function getPost()
     $post0 = $postManager->getPost($articleEnCours);
     $comments = $commentManager->getComments($articleEnCours);
     $posts = $postManager->get3Posts($articleEnCours);
+    $topPosts = $postManager->getTopPosts();
 
     require('views/frontend/template_article.php');
 }

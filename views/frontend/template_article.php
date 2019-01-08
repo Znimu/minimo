@@ -35,15 +35,20 @@
                     </li>
                 </ul>
                 <a class="top-post" href="#">Top posts</a>
+                <?php
+                    while ($topPost = $topPosts->fetch()) {
+                ?>
                 <ul>
-                    <li><a><h3 class="side-block-title">A day exploring the Alps</h3><span class="side-block-nb-comment">24 comments</span></a></li>
+                    <li>
+                        <a href="?action=article&id=<?= $topPost['post_id'] ?>">
+                            <h3 class="side-block-title"><?= $topPost['post_title'] ?></h3>
+                            <span class="side-block-nb-comment"><?= $topPost['nb_comments'] ?> comments</span>
+                        </a>
+                    </li>
                 </ul>
-                <ul>
-                    <li><a><h3 class="side-block-title">American dream</h3><span class="side-block-nb-comment">19 comments</span></a></li>
-                </ul>
-                <ul>
-                    <li><a><h3 class="side-block-title">Cold winter days</h3><span class="side-block-nb-comment">17 comments</span></a></li>
-                </ul>
+                <?php
+                    }
+                ?>
 
                 <img class="article-pub" src="public/img/Pub.png" />
             </div>
@@ -80,7 +85,7 @@
                         <input class="comment-input" id="comment_email" name="comment_email" placeholder="E-MAIL" />
                         <br /><br />
                         <textarea class="comment-textarea" placeholder="JOIN THE DISCUSSION" id="comment_comment" name="comment_comment"></textarea>
-                        <input id="comment-btn-submit" class="comment-btn-submit" type="buttom" value="Enregistrer ce commentaire" />
+                        <input id="comment-btn-submit" class="comment-btn-submit" type="buttom" value="Send this comment" />
                     </form>
                 </div>
             </div>

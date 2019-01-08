@@ -87,19 +87,18 @@ class PostManager extends Manager
         return $post;
     }
 
-    public function getImg($postId)
-    {
+    public function getTopPosts() {
         $db = $this->dbConnect();
-        $sql = 'SELECT *
-                FROM posts, posts_posts
-                WHERE post_id1 = ?
-                AND post_id2 = id
-                ORDER BY post_date
-                DESC LIMIT 0, 5';
-        $req = $db->prepare($sql);
-        $req->execute(array($postId));
-        $post = $req->fetch();
+        $sql = 'SELECT *,
+                COUNT(comments.id) AS nb_comments,
+                posts.id AS post_id
+                FROM posts, comments
+                WHERE posts.id = comments.post_id
+                GROUP BY comments.post_id
+                ORDER BY nb_comments DESC, post_date DESC
+                LIMIT 0, 3';
+        $req = $db->query($sql);
 
-        return $post;
+        return $req;
     }
 }

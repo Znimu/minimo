@@ -248,6 +248,7 @@ a {
     border:1px solid #cccccc;
     padding: 10px 25px;
     background: #ccc;
+    text-align: center;
     cursor: pointer;
 }
 

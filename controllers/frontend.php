@@ -7,7 +7,7 @@ require_once('models/ContactManager.php');
 function get2Posts()
 {
     $postManager = new Minimo\Models\PostManager();
-    $posts = $postManager->get2Posts();
+    $posts = $postManager->getPosts(2);
 
     require('views/frontend/template_accueil.php');
 }
@@ -33,15 +33,9 @@ function getPost()
     $postManager = new Minimo\Models\PostManager();
     $commentManager = new Minimo\Models\CommentManager();
 
-    $post = $postManager->getPost($articleEnCours);
-    $img = $postManager->getImg($articleEnCours);
+    $post0 = $postManager->getPost($articleEnCours);
     $comments = $commentManager->getComments($articleEnCours);
-
     $posts = $postManager->get3Posts($articleEnCours);
-    for ($i = 0; $i < 3; $i++) {
-        $data3Posts[] = $posts->fetch();
-        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
-    }
 
     require('views/frontend/template_article.php');
 }
@@ -52,11 +46,7 @@ function get3PostsMore($action)
     $postManager = new Minimo\Models\PostManager();
 
     $posts = $postManager->get3Posts($articleEnCours);
-    for ($i = 0; $i < 3; $i++) {
-        $data3Posts[] = $posts->fetch();
-        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
-    }
-
+    
     require "views/frontend/template_page.php";
 }
 
@@ -65,10 +55,6 @@ function newContact($action, $erreur) {
     $postManager = new Minimo\Models\PostManager();
 
     $posts = $postManager->get3Posts($articleEnCours);
-    for ($i = 0; $i < 3; $i++) {
-        $data3Posts[] = $posts->fetch();
-        $img3Posts[] = $postManager->getImg($data3Posts[$i]['id']);
-    }
 
     if ($erreur === "") {
         $contactManager = new Minimo\Models\ContactManager();

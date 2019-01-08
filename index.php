@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
 		get3PostsMore($action);
 	}
 	elseif ($action === "article") { // Article
-		if (isset($_GET['id']) && intval($_GET['id']) === $_GET['id'])
+		if (isset($_GET['id']))
 			getPost(intval($_GET['id']));
 		else
 			header('Location: index.php?action=accueil');

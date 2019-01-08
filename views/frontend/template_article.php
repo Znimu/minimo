@@ -1,4 +1,4 @@
-<?php $title = "Minimo - " . $post['post_title']; ?>
+<?php $title = "Minimo - " . $post0['article_title']; ?>
 
 <?php ob_start(); ?>
     <br>
@@ -11,11 +11,11 @@
             </div>
         
             <div class="medium-9 cell">
-                <img class="img-top" src="public/img/<?= $img['post_name'] ?>" />
+                <img class="img-top" src="public/img/<?= $post0['image_name'] ?>" />
 
-                <a href="?action=categorie&cat=<?= $post['post_category'] ?>"><?= $post['post_category'] ?></a>
-                <h1><?= $post['post_title'] ?></h1>
-                <p><?= $post['post_content'] ?></p>
+                <a href="?action=categorie&cat=<?= $post0['article_category'] ?>"><?= $post0['article_category'] ?></a>
+                <h1><?= $post0['article_title'] ?></h1>
+                <p><?= $post0['article_content'] ?></p>
                 
                 <div class="share">SHARE 
                     <i class="fab fa-facebook-f"></i> 

@@ -7,11 +7,12 @@
 
             <?php
                 for ($i = 0; $i < 3; $i++) {
+                    $post = $posts->fetch();
             ?>
             <div class="medium-4 cell">
-                <a class="see-more-link" href="?action=article&id=<?= $data3Posts[$i]['id'] ?>">
-                    <img class="see-more-img" src="public/img/<?= $img3Posts[$i]['post_name'] ?>" />
-                    <h3><?= $data3Posts[$i]['post_title'] ?></h3>
+                <a class="see-more-link" href="?action=article&id=<?= $post['article_id'] ?>">
+                    <img class="see-more-img" src="public/img/<?= $post['image_name'] ?>" />
+                    <h3><?= $post['article_title'] ?></h3>
                 </a>
             </div>
             <?php

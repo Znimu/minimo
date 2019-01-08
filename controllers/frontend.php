@@ -7,7 +7,7 @@ require_once('models/ContactManager.php');
 function get2Posts()
 {
     $postManager = new Minimo\Models\PostManager();
-    $posts = $postManager->getPosts(2);
+    $posts = $postManager->getPosts(2, 0);
 
     require('views/frontend/template_accueil.php');
 }

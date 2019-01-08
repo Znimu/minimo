@@ -31,12 +31,19 @@ $(document).ready(function() {
     });
 
     // AJOUT 2 ARTICLES
+    var nb_articles_affiches = 2;
     $('#button-load').on("click", function() {
         $.ajax({
-            url: "controllers/ajout2Articles.php"
+            method: "POST",
+            url: "controllers/ajout2Articles.php",
+            data: {
+                nb_articles_affiches: nb_articles_affiches
+            }
         })
         .done(function(msg) {
+            alert(msg);
             $('#block-ajout-articles').append(msg);
+            nb_articles_affiches += 2;
         })
         .fail(function(msg) {
           alert("Error : " + msg);

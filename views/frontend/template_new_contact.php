@@ -7,7 +7,7 @@
     if ($erreur !== "") {
 ?>
             <div class="erreur-new-contact">
-                <?= "<p class='erreur-p-centered'>Une erreur a été rencontrée : " . $erreur . "<br />Votre message n'a pas été enregistré.</p>" ?>
+                <?= "<p class='erreur-p-centered'>Une erreur a été rencontrée : " . $erreur . ".<br />Votre message n'a pas été enregistré.</p>" ?>
                 
                 <br />
                 

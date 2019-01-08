@@ -41,7 +41,6 @@ $(document).ready(function() {
             }
         })
         .done(function(msg) {
-            alert(msg);
             $('#block-ajout-articles').append(msg);
             nb_articles_affiches += 2;
         })

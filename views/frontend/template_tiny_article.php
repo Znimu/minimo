@@ -19,6 +19,6 @@
 	<?php
 		}
 		else
-			echo "<p class='articles-tous-affiches'>(tous les articles ont été affichés)</p>";
+			echo "<br /><br /><br /><p class='articles-tous-affiches'>(tous les articles ont été affichés)</p>";
 	?>
 </div>

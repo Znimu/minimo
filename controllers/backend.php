@@ -5,6 +5,17 @@ require_once('models/ArticleManager.php');
 require_once('models/ImageManager.php');
 require_once('models/UserManager.php');
 
+// CONNEXION
+function connexion($login, $password) {
+    $userManager = new Minimo\Models\UserManager();
+    $resu = $userManager->exists($login, $password);
+    return $resu;
+}
+
+function connexionForm() {
+    require('views/backend/template_connexion.php');
+}
+
 // NEWSLETTER EMAILS
 function getEmails() {
     $emailManager = new Minimo\Models\EmailManager();

@@ -15,4 +15,17 @@ class UserManager extends Manager
 
         return $req;
     }
+
+    public function exists($login, $password)
+    {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *
+                FROM users
+                WHERE user_login = ?
+                AND user_pass = ?';
+        $user = $db->prepare($sql);
+        $req = $user->execute(array($login, $password));
+
+        return $req;
+    }
 }

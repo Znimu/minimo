@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><?= $title ?></title>
+        <title>Minimo admin - Connexion</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="public/css/foundation.min.css">
         <link rel="stylesheet" href="public/css/app.css">
@@ -16,22 +16,30 @@
                     <a href="admin.php">
                         <img class="img-logo" src="public/img/logo_minimo.png" />
                         <p class="admin-subtitle">(admin)</p>
-                        <a class="link-deconnexion" href="?action=deconnexion">déconnexion</a>
                     </a>
-                </div>
-
-                <div class="top-bar-right">
-                    <ul class="dropdown menu">
-                        <li><a href="?action=articles">Articles</a></li>
-                        <li><a href="?action=images">Images</a></li>
-                        <li><a href="?action=contacts">Contacts</a></li>
-                        <li><a href="?action=newsletters">Newsletters</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
         
-        <?= $content ?>
+        <div class="grid-container">
+            <form method="post" action="admin.php" id="form-connexion" name="form-connexion">
+                <table class="tab-connexion">
+                    <tr>
+                        <td>Login</td>
+                        <td><input type="text" id="login" name="login" /></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" id="password" name="password" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="centered">
+                            <input type="submit" id="btn-connexion" class="btn-connexion" name="btn-connexion" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </body>
 
     <script src="public/js/vendor/jquery.js"></script>

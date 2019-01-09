@@ -107,3 +107,9 @@ function deleteContact(id) {
     if (confirm("Voulez-vous vraiment effacer ce contact ?"))
         window.location = "?action=effacerContact&id=" + id;
 }
+
+// ARTICLES
+function deleteArticle(id) {
+    if (confirm("Voulez-vous vraiment effacer cet article ?"))
+        window.location = "?action=effacerArticle&id=" + id;
+}

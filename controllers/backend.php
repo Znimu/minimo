@@ -1,7 +1,10 @@
 <?php
 require_once('models/EmailManager.php');
 require_once('models/ContactManager.php');
+require_once('models/ArticleManager.php');
+require_once('models/UserManager.php');
 
+// NEWSLETTER EMAILS
 function getEmails() {
     $emailManager = new Minimo\Models\EmailManager();
     $emails = $emailManager->getEmails();
@@ -37,6 +40,7 @@ function newEmail($email) {
     header("Location: ?action=newsletters");
 }
 
+// CONTACTS
 function getContacts() {
     $contactManager = new Minimo\Models\ContactManager();
     $contacts = $contactManager->getContacts();
@@ -71,4 +75,50 @@ function effacerContact($id) {
     $resu = $contactManager->effacerContact($id);
 
     require('views/backend/template_contacts_effacer.php');
+}
+
+// ARTICLES
+function getArticles() {
+    $articleManager = new Minimo\Models\ArticleManager();
+    $articles = $articleManager->getArticles();
+
+    $userManager = new Minimo\Models\UserManager();
+    $authors = $userManager->getUsers();
+
+    require('views/backend/template_articles.php');
+}
+
+function getArticle($id) {
+    $articleManager = new Minimo\Models\ArticleManager();
+    $article = $articleManager->getArticle($id);
+
+    $userManager = new Minimo\Models\UserManager();
+    $authors = $userManager->getUsers();
+
+    require('views/backend/template_articles_editer.php');
+}
+
+function modifierArticle($id, $author, $date, $content, $title, $status, $name, $category) {
+    $articleManager = new Minimo\Models\ArticleManager();
+    $resu = $articleManager->modifierArticle($id, $author, $date, $content, $title, $status, $name, $category);
+
+    require('views/backend/template_articles_modifier.php');
+}
+
+function newArticle($author, $date, $content, $title, $status, $name, $category) {
+    $articleManager = new Minimo\Models\ArticleManager();
+    $newArticle = $articleManager->newArticle($author, $date, $content, $title, $status, $name, $category);
+    //$articles = $articleManager->getArticles();
+
+    if (!$newArticle)
+        echo "Erreur : nouvel article non enregistré.";
+    else
+        header("Location: ?action=articles");
+}
+
+function effacerArticle($id) {
+    $articleManager = new Minimo\Models\ArticleManager();
+    $resu = $articleManager->effacerArticle($id);
+
+    require('views/backend/template_articles_effacer.php');
 }

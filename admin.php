@@ -88,4 +88,59 @@ if (isset($_GET['action'])) {
             modifierContact($_POST['id'], $_POST['name'], $_POST['email'], $_POST['message'], $_POST['date']);
         }
     }
+    // ARTICLES
+    elseif ($action === "articles" || $action === "newArticle") {
+        getArticles();
+    }
+    elseif ($action === "newArticleSave") {
+        if (!isset($_POST['author']) || $_POST['author'] === ""
+            || !isset($_POST['date']) || $_POST['date'] === ""
+            || !isset($_POST['content']) || $_POST['content'] === ""
+            || !isset($_POST['title']) || $_POST['title'] === ""
+            || !isset($_POST['status']) || $_POST['status'] === ""
+            || !isset($_POST['name']) || $_POST['name'] === ""
+            || !isset($_POST['category']) || $_POST['category'] === "") {
+            //header("Location: admin.php?action=articles");
+            echo "Erreur : champ vide !";
+        }
+        else {
+            newArticle($_POST['author'], $_POST['date'], $_POST['content'], $_POST['title'],
+                        $_POST['status'], $_POST['name'], $_POST['category']);
+        }
+    }
+    elseif ($action === "effacerArticle") {
+        $erreur = "";
+        if (!isset($_GET['id']) || $_GET['id'] === "") {
+            $erreur = "Paramètre manquant";
+            header("Location: admin.php?action=articles");
+        }
+        else {
+            effacerArticle($_GET['id']);
+        }
+    }
+    elseif ($action === "editerArticle") {
+        if (!isset($_GET['id']) || $_GET['id'] === "")
+            header("Location: admin.php?action=articles");
+        else {
+            getArticle($_GET['id']);
+        }
+    }
+    elseif ($action === "modifierArticle") {
+        $erreur = "";
+        if (!isset($_POST['id']) || $_POST['id'] === ""
+            || !isset($_POST['author']) || $_POST['author'] === ""
+            || !isset($_POST['date']) || $_POST['date'] === ""
+            || !isset($_POST['content']) || $_POST['content'] === ""
+            || !isset($_POST['title']) || $_POST['title'] === ""
+            || !isset($_POST['status']) || $_POST['status'] === ""
+            || !isset($_POST['name']) || $_POST['name'] === ""
+            || !isset($_POST['category']) || $_POST['category'] === "") {
+            $erreur = "Paramètre manquant";
+            header("Location: admin.php?action=articles");
+        }
+        else {
+            modifierArticle($_POST['id'], $_POST['author'], $_POST['date'], $_POST['content'],
+                            $_POST['title'], $_POST['status'], $_POST['name'], $_POST['category']);
+        }
+    }
 }

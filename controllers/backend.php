@@ -1,10 +1,4 @@
 <?php
-require_once('models/EmailManager.php');
-require_once('models/ContactManager.php');
-require_once('models/ArticleManager.php');
-require_once('models/ImageManager.php');
-require_once('models/UserManager.php');
-
 // CONNEXION
 function connexion($login, $password) {
     $userManager = new Minimo\Models\UserManager();

@@ -1,4 +1,5 @@
 <?php
+require('bootstrap.php');
 require('controllers/backend.php');
 session_start();
 

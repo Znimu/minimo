@@ -1,9 +1,4 @@
 <?php
-// Chargement des classes
-require_once('models/PostManager.php');
-require_once('models/CommentManager.php');
-require_once('models/ContactManager.php');
-
 function get2Posts()
 {
     $postManager = new Minimo\Models\PostManager();

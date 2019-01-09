@@ -143,4 +143,52 @@ if (isset($_GET['action'])) {
                             $_POST['title'], $_POST['status'], $_POST['name'], $_POST['category']);
         }
     }
+    // IMAGES
+    elseif ($action === "images" || $action === "newImage") {
+        getImages();
+    }
+    elseif ($action === "newImageSave") {
+        if (!isset($_POST['author']) || $_POST['author'] === ""
+            || !isset($_POST['title']) || $_POST['title'] === ""
+            || !isset($_POST['status']) || $_POST['status'] === ""
+            || !isset($_POST['name']) || $_POST['name'] === "") {
+            //header("Location: admin.php?action=articles");
+            echo "Erreur : champ vide !";
+        }
+        else {
+            newImage($_POST['author'], $_POST['title'],
+                        $_POST['status'], $_POST['name']);
+        }
+    }
+    elseif ($action === "effacerImage") {
+        $erreur = "";
+        if (!isset($_GET['id']) || $_GET['id'] === "") {
+            $erreur = "Paramètre manquant";
+            header("Location: admin.php?action=images");
+        }
+        else {
+            deleteImage($_GET['id']);
+        }
+    }
+    elseif ($action === "editerImage") {
+        if (!isset($_GET['id']) || $_GET['id'] === "")
+            header("Location: admin.php?action=images");
+        else {
+            getImage($_GET['id']);
+        }
+    }
+    elseif ($action === "modifierImage") {
+        $erreur = "";
+        if (!isset($_POST['id']) || $_POST['id'] === ""
+            || !isset($_POST['author']) || $_POST['author'] === ""
+            || !isset($_POST['title']) || $_POST['title'] === ""
+            || !isset($_POST['status']) || $_POST['status'] === ""
+            || !isset($_POST['name']) || $_POST['name'] === "") {
+            $erreur = "Paramètre manquant";
+            header("Location: admin.php?action=images");
+        }
+        else {
+            updateImage($_POST['id'], $_POST['author'], $_POST['title'], $_POST['status'], $_POST['name']);
+        }
+    }
 }

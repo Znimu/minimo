@@ -113,3 +113,9 @@ function deleteArticle(id) {
     if (confirm("Voulez-vous vraiment effacer cet article ?"))
         window.location = "?action=effacerArticle&id=" + id;
 }
+
+// IMAGES
+function deleteImage(id) {
+    if (confirm("Voulez-vous vraiment effacer cette image ?"))
+        window.location = "?action=effacerImage&id=" + id;
+}

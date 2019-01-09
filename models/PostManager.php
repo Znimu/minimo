@@ -6,7 +6,7 @@ require_once("Manager.php");
 
 class PostManager extends Manager
 {
-    public function getPosts($nb, $nb_articles_affiches)
+    public function getNBPosts($nb, $nb_articles_affiches)
     {
         $db = $this->dbConnect();
         $sql = 'SELECT *,
@@ -74,7 +74,7 @@ class PostManager extends Manager
         return $req;
     }
 
-    public function getPost($postId)
+    public function get1Post($postId)
     {
         $db = $this->dbConnect();
         $sql = 'SELECT *,
@@ -109,5 +109,55 @@ class PostManager extends Manager
         $req = $db->query($sql);
 
         return $req;
+    }
+
+    // BACKEND ==================================================
+    public function getPosts($type)
+    {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *, posts.id AS post_id
+                FROM posts, users
+                WHERE post_type = "' . $type . '"
+                AND posts.post_author = users.id
+                ORDER BY post_id';
+        $req = $db->query($sql);
+
+        return $req;
+    }
+
+    public function getPost($postId)
+    {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *, DATE_FORMAT(post_date, \'%Y-%m-%d\') AS post_date_fr
+                FROM posts
+                WHERE id = ' . $postId;
+        $req = $db->query($sql);
+
+        return $req;
+    }
+
+    public function updatePost($id, $author, $date, $content, $title, $status, $name, $category) {
+        $db = $this->dbConnect();
+        $sql = 'UPDATE posts
+                SET post_author = ' . $author . ',
+                    post_date = "' . $date . '",
+                    post_content = "' . $content . '",
+                    post_title = "' . $title . '",
+                    post_status = "' . $status . '",
+                    post_name = "' . $name . '",
+                    post_category = "' . $category . '"
+                WHERE id = ' . $id;
+        $post = $db->query($sql);
+
+        return $post;
+    }
+
+    public function deletePost($id) {
+        $db = $this->dbConnect();
+        $sql = 'DELETE FROM posts
+                WHERE id = ' . $id;
+        $post = $db->query($sql);
+
+        return $post;
     }
 }

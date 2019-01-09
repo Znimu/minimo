@@ -7,7 +7,7 @@ require_once('models/ContactManager.php');
 function get2Posts()
 {
     $postManager = new Minimo\Models\PostManager();
-    $posts = $postManager->getPosts(2, 0);
+    $posts = $postManager->getNBPosts(2, 0);
 
     require('views/frontend/template_accueil.php');
 }
@@ -21,13 +21,13 @@ function listPostsCategory($category)
     require('views/frontend/template_page.php');
 }
 
-function getPost()
+function get1Post()
 {
     $articleEnCours = $_GET['id'];
     $postManager = new Minimo\Models\PostManager();
     $commentManager = new Minimo\Models\CommentManager();
 
-    $post0 = $postManager->getPost($articleEnCours);
+    $post0 = $postManager->get1Post($articleEnCours);
     $comments = $commentManager->getComments($articleEnCours);
     $posts = $postManager->get3Posts($articleEnCours);
     $topPosts = $postManager->getTopPosts();

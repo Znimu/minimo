@@ -80,7 +80,7 @@ function effacerContact($id) {
 // ARTICLES
 function getArticles() {
     $articleManager = new Minimo\Models\ArticleManager();
-    $articles = $articleManager->getArticles();
+    $articles = $articleManager->getPosts("article");
 
     $userManager = new Minimo\Models\UserManager();
     $authors = $userManager->getUsers();
@@ -90,7 +90,7 @@ function getArticles() {
 
 function getArticle($id) {
     $articleManager = new Minimo\Models\ArticleManager();
-    $article = $articleManager->getArticle($id);
+    $article = $articleManager->getPost($id);
 
     $userManager = new Minimo\Models\UserManager();
     $authors = $userManager->getUsers();
@@ -98,9 +98,9 @@ function getArticle($id) {
     require('views/backend/template_articles_editer.php');
 }
 
-function modifierArticle($id, $author, $date, $content, $title, $status, $name, $category) {
+function updateArticle($id, $author, $date, $content, $title, $status, $name, $category) {
     $articleManager = new Minimo\Models\ArticleManager();
-    $resu = $articleManager->modifierArticle($id, $author, $date, $content, $title, $status, $name, $category);
+    $resu = $articleManager->updatePost($id, $author, $date, $content, $title, $status, $name, $category);
 
     require('views/backend/template_articles_modifier.php');
 }
@@ -116,9 +116,9 @@ function newArticle($author, $date, $content, $title, $status, $name, $category)
         header("Location: ?action=articles");
 }
 
-function effacerArticle($id) {
+function deleteArticle($id) {
     $articleManager = new Minimo\Models\ArticleManager();
-    $resu = $articleManager->effacerArticle($id);
+    $resu = $articleManager->deletePost($id);
 
     require('views/backend/template_articles_effacer.php');
 }

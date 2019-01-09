@@ -11,7 +11,7 @@ if (isset($_GET['action'])) {
 	}
 	elseif ($action === "article") { // Article
 		if (isset($_GET['id']))
-			getPost(intval($_GET['id']));
+			get1Post(intval($_GET['id']));
 		else
 			header('Location: index.php?action=accueil');
 	}

@@ -115,7 +115,7 @@ if (isset($_GET['action'])) {
             header("Location: admin.php?action=articles");
         }
         else {
-            effacerArticle($_GET['id']);
+            deleteArticle($_GET['id']);
         }
     }
     elseif ($action === "editerArticle") {
@@ -139,7 +139,7 @@ if (isset($_GET['action'])) {
             header("Location: admin.php?action=articles");
         }
         else {
-            modifierArticle($_POST['id'], $_POST['author'], $_POST['date'], $_POST['content'],
+            updateArticle($_POST['id'], $_POST['author'], $_POST['date'], $_POST['content'],
                             $_POST['title'], $_POST['status'], $_POST['name'], $_POST['category']);
         }
     }

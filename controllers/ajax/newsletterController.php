@@ -10,7 +10,7 @@ if (!isset($_POST['email']))
 elseif ($_POST['email'] === "")
     echo "Vide";
 else {
-    require_once('../models/EmailManager.php');
+    require_once('../../models/EmailManager.php');
 
     newEmail($_POST['email']);
 

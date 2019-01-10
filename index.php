@@ -1,11 +1,30 @@
 <?php
 require('bootstrap.php');
 require('controllers/frontend.php');
+session_start();
+
+if (isset($_GET['action']) && $_GET['action'] === "deconnexion") {
+    session_destroy();
+    header('Location: index.php?action=accueil');
+    exit();
+}
+elseif (isset($_POST['login']) && isset($_POST['password'])) {
+    if (connexion($_POST['login'], $_POST['password'])) {
+		$_SESSION['user'] = $_POST['login'];
+    }
+    else {
+        echo "Mauvais login ou mot de passe";
+    }
+}
 
 if (isset($_GET['action'])) {
 	$action = $_GET['action'];
 
 	switch ($action) {
+		case "connexion":
+			connexionForm();
+			break;
+
 		case "accueil":
 			get2Posts();
 			break;
@@ -42,7 +61,7 @@ if (isset($_GET['action'])) {
 
 			newContact("new contact", $erreur);
 			break;
-		
+
 		default:
 			header('Location: index.php?action=accueil');
 	}

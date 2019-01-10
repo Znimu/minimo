@@ -10,7 +10,39 @@
     </head>
         
     <body>
-        <div class="grid-container">
+        <div class="div-connexion-top">
+            <div class="grid-container connexion">
+                <div class="top-bar">
+                    <div class="top-bar-left">
+                        <?php
+                            if (isset($_SESSION['user'])) {
+                        ?>
+                        <p>Connecté : <strong><?= $_SESSION['user'] ?></strong>
+                            <a class="link-lowercase" href="admin.php">(admin)</a>
+                        </p>
+                        <?php
+                            }
+                        ?>
+                    </div>
+                    <div class="top-bar-right">
+                        <?php
+                            if (isset($_SESSION['user'])) {
+                        ?>
+                        <a class="lien-connexion-frontend" href="?action=deconnexion">Deconnexion</a>
+                        <?php
+                            }
+                            else {
+                        ?>
+                        <a class="lien-connexion-frontend" href="?action=connexion">Se connecter</a>
+                        <?php
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container site-bar">
             <div class="top-bar menu-top">
                 <div class="top-bar-left">
                     <a href="index.php">
@@ -26,10 +58,6 @@
                         <li><a href="?action=categorie&cat=visites">Travel</a></li>
                     </ul>
                 </div>
-            </div>
-
-            <div>
-                <a class="lien-connexion-frontend" href="?action=connexion">Se connecter</a>
             </div>
         </div>
         

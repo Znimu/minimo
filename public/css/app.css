@@ -57,14 +57,33 @@ a {
     color: #aba99d;
 }
 
-.lien-connexion-frontend {
-    margin-left: 10px;
+.div-connexion-top {
+    padding: 10px 0;
+    background: #F0F0F0;
+    box-shadow: 3px 0 4px rgba(0, 0, 0, .4);
+}
+
+.div-connexion-top {
+    margin-bottom: 0;
+}
+
+.connexion .top-bar {
+    margin: 0;
+    padding: 0;
+}
+
+.connexion p {
+    margin: 0;
+}
+
+.link-lowercase {
+    text-transform: none;
 }
 
 /* ACCUEIL */
-.menu-top {
+.site-bar .menu-top {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .menu li a {
@@ -79,7 +98,7 @@ a {
     background: none;
 }
 
-.top-bar {
+.site-bar .top-bar {
     padding: .5rem 0;
 }
 

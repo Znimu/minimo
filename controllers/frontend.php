@@ -1,4 +1,6 @@
 <?php
+require('frontend-connexion.php');
+
 function get2Posts()
 {
     $postManager = new Minimo\Models\PostManager();
@@ -53,20 +55,6 @@ function newContact($action, $erreur) {
 
     require "views/frontend/template_page.php";
 }
-/*
-function addComment($postId, $author, $comment)
-{
-    $commentManager = new Minimo\Model\CommentManager();
-
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-    if ($affectedLines === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    }
-    else {
-        header('Location: index.php?action=post&id=' . $postId);
-    }
-}*/
 
 function editComment($commentId)
 {

@@ -76,7 +76,8 @@ else { // On est connecté
                 || !isset($_POST['email']) || $_POST['email'] === ""
                 || !isset($_POST['date']) || $_POST['date'] === ""
                 || !isset($_POST['message']) || $_POST['message'] === "") {
-                header("Location: admin.php?action=contacts");
+                echo "Erreur : champ vide";
+                //header("Location: admin.php?action=contacts");
             }
             else {
                 newContact($_POST['name'], $_POST['email'], $_POST['message'], $_POST['date']);

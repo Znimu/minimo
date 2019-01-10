@@ -219,6 +219,15 @@ else { // On est connecté
                 updateImage($_POST['id'], $_POST['author'], $_POST['title'], $_POST['status'], $_POST['name']);
             }
         }
+        elseif ($action === "upload") {
+            uploadForm();
+        }
+        elseif ($action === "newFile") {
+            newFile();
+        }
+        else {
+            echo "404 - page not found";
+        }
     }
     else {
         echo "404 - page not found";

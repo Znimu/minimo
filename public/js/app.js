@@ -7,7 +7,7 @@ $(document).ready(function() {
     
         $.ajax({
             method: "POST",
-            url: "controllers/newsletterController.php",
+            url: "controllers/ajax/newsletterController.php",
             data: { email: email }
         })
         .done(function(msg) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
     $('#button-load').on("click", function() {
         $.ajax({
             method: "POST",
-            url: "controllers/ajout2Articles.php",
+            url: "controllers/ajax/ajout2Articles.php",
             data: {
                 nb_articles_affiches: nb_articles_affiches
             }
@@ -58,7 +58,7 @@ $(document).ready(function() {
     
         $.ajax({
             method: "POST",
-            url: "controllers/commentController.php",
+            url: "controllers/ajax/commentController.php",
             data: {
                 postId: post_id,
                 name: comment_name,

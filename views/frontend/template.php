@@ -27,6 +27,10 @@
                     </ul>
                 </div>
             </div>
+
+            <div>
+                <a class="lien-connexion-frontend" href="?action=connexion">Se connecter</a>
+            </div>
         </div>
         
         <?= $content ?>

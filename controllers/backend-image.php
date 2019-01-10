@@ -47,3 +47,7 @@ function deleteImage($id) {
 
     require('views/backend/template_images_effacer.php');
 }
+
+function uploadFile($name) {
+    $upload1 = upload($name, 'public/img/', 999999999, array('png','gif','jpg','jpeg') );
+}

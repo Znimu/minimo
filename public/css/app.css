@@ -57,6 +57,10 @@ a {
     color: #aba99d;
 }
 
+.lien-connexion-frontend {
+    margin-left: 10px;
+}
+
 /* ACCUEIL */
 .menu-top {
     margin-top: 30px;

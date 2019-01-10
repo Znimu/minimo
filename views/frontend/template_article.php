@@ -80,7 +80,7 @@
                 </div>
                 <div class="medium-11 cell">
                     <form id="formNewComment" name="formNewComment" action="?action=newComment" method="post">
-                        <input type="hidden" id="post_id" name="post_id" value="<?= $post['id'] ?>" />
+                        <input type="hidden" id="post_id" name="post_id" value="<?= $post0['article_id'] ?>" />
                         <input class="comment-input" id="comment_name" name="comment_name" placeholder="NAME" />
                         <input class="comment-input" id="comment_email" name="comment_email" placeholder="E-MAIL" />
                         <br /><br />

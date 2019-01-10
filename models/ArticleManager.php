@@ -63,12 +63,21 @@ class ArticleManager extends PostManager
                 WHERE id = ' . $id;
         $post = $db->query($sql);
 
-        if (intval($image) !== 0) {
-            $sql = 'UPDATE posts_posts
-                    SET post_id2 = ' . $image . '
+        if (intval($image) !== 0) {  // Image non vide
+            $sql = 'SELECT * FROM posts_posts
                     WHERE post_id1 = ' . $id;
+            $trouve = $db->query($sql);
+            if ($trouve->fetch()) { // $id Trouvé dans la table
+                $sql = 'UPDATE posts_posts
+                        SET post_id2 = ' . $image . '
+                        WHERE post_id1 = ' . $id;
+            }
+            else { // $id non trouvé dans la table
+                $sql = 'INSERT INTO posts_posts (post_id1, post_id2)
+                        VALUES (' . $id . ', ' . $image . ')';
+            }
         }
-        else {
+        else { // Image vide
             $sql = 'DELETE FROM posts_posts
                     WHERE post_id1 = ' . $id;
         }

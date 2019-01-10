@@ -157,6 +157,11 @@ class PostManager extends Manager
         $sql = 'DELETE FROM posts
                 WHERE id = ' . $id;
         $post = $db->query($sql);
+        
+        $sql = 'DELETE FROM posts_posts
+                WHERE post_id1 = ' . $id . '
+                OR post_id2 = ' . $id;
+        $db->query($sql);
 
         return $post;
     }

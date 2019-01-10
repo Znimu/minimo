@@ -125,13 +125,14 @@ else { // On est connecté
                 || !isset($_POST['title']) || $_POST['title'] === ""
                 || !isset($_POST['status']) || $_POST['status'] === ""
                 || !isset($_POST['name']) || $_POST['name'] === ""
-                || !isset($_POST['category']) || $_POST['category'] === "") {
+                || !isset($_POST['category']) || $_POST['category'] === ""
+                || !isset($_POST['image']) || $_POST['image'] === "") {
                 //header("Location: admin.php?action=articles");
                 echo "Erreur : champ vide !";
             }
             else {
                 newArticle($_POST['author'], $_POST['date'], $_POST['content'], $_POST['title'],
-                            $_POST['status'], $_POST['name'], $_POST['category']);
+                            $_POST['status'], $_POST['name'], $_POST['category'], $_POST['image']);
             }
         }
         elseif ($action === "effacerArticle") {
@@ -160,13 +161,14 @@ else { // On est connecté
                 || !isset($_POST['title']) || $_POST['title'] === ""
                 || !isset($_POST['status']) || $_POST['status'] === ""
                 || !isset($_POST['name']) || $_POST['name'] === ""
-                || !isset($_POST['category']) || $_POST['category'] === "") {
+                || !isset($_POST['category']) || $_POST['category'] === ""
+                || !isset($_POST['image']) || $_POST['image'] === "") {
                 $erreur = "Paramètre manquant";
-                header("Location: admin.php?action=articles");
+                //header("Location: admin.php?action=articles");
             }
             else {
                 updateArticle($_POST['id'], $_POST['author'], $_POST['date'], $_POST['content'],
-                                $_POST['title'], $_POST['status'], $_POST['name'], $_POST['category']);
+                    $_POST['title'], $_POST['status'], $_POST['name'], $_POST['category'], $_POST['image']);
             }
         }
         // IMAGES

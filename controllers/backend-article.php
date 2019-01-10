@@ -2,6 +2,7 @@
 function getArticles() {
     $articleManager = new Minimo\Models\ArticleManager();
     $articles = $articleManager->getPosts("article");
+    $images = $articleManager->getPosts("file");
 
     $userManager = new Minimo\Models\UserManager();
     $authors = $userManager->getUsers();
@@ -12,6 +13,7 @@ function getArticles() {
 function getArticle($id) {
     $articleManager = new Minimo\Models\ArticleManager();
     $article = $articleManager->getPost($id);
+    $images = $articleManager->getPosts("file");
 
     $userManager = new Minimo\Models\UserManager();
     $authors = $userManager->getUsers();
@@ -19,16 +21,16 @@ function getArticle($id) {
     require('views/backend/template_articles_editer.php');
 }
 
-function updateArticle($id, $author, $date, $content, $title, $status, $name, $category) {
+function updateArticle($id, $author, $date, $content, $title, $status, $name, $category, $image) {
     $articleManager = new Minimo\Models\ArticleManager();
-    $resu = $articleManager->updatePost($id, $author, $date, $content, $title, $status, $name, $category);
+    $resu = $articleManager->updateArticle($id, $author, $date, $content, $title, $status, $name, $category, $image);
 
     require('views/backend/template_articles_modifier.php');
 }
 
-function newArticle($author, $date, $content, $title, $status, $name, $category) {
+function newArticle($author, $date, $content, $title, $status, $name, $category, $image) {
     $articleManager = new Minimo\Models\ArticleManager();
-    $newArticle = $articleManager->newArticle($author, $date, $content, $title, $status, $name, $category);
+    $newArticle = $articleManager->newArticle($author, $date, $content, $title, $status, $name, $category, $image);
     
     if (!$newArticle)
         echo "Erreur : nouvel article non enregistré.";

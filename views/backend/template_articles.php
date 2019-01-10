@@ -60,6 +60,18 @@
                 <input type="text" id="status" name="status" placeholder="STATUS" />
                 <input type="text" id="name" name="name" placeholder="NAME" />
                 <input type="text" id="category" name="category" placeholder="CATEGORY" />
+                <select id="image" name="image">
+                        <option value="0">(no image linked)</option>
+                    <?php
+                        while ($image = $images->fetch()) {
+                    ?>
+                        <option value="<?= $image['post_id'] ?>">
+                            <?= $image['post_title'] . " - " . $image['post_name'] ?>
+                        </option>
+                    <?php
+                        }
+                    ?>
+                </select>
                 <input type="submit" value="Ajouter cet article" class="btn-insert-submit" />
             </form>
         </div>

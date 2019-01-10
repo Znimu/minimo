@@ -237,7 +237,7 @@ a {
 
 .comment-input {
     border-radius: 5px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
     padding: 15px 20px;
     width: 49.5%;
     box-sizing: border-box;
@@ -247,7 +247,7 @@ a {
     border-radius: 5px;
     border:1px solid #cccccc;
     padding: 10px 25px;
-    background: #ccc;
+    background: #eeeeee;
     text-align: center;
     cursor: pointer;
 }
@@ -324,7 +324,7 @@ a {
 .contact-input {
     display: inline;
     border-radius: 5px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
     padding: 15px 20px;
     width: 49.5%;
     box-sizing: border-box;
@@ -361,8 +361,8 @@ a {
 .btn-connexion {
     padding: 10px 25px;
     border-radius: 5px;
-    background: none;
-    border: 1px solid #CCCCCC;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
 }
 
 .link-deconnexion {
@@ -382,4 +382,11 @@ a {
 .td-supprimer i {
     color: red;
     cursor: pointer;
+}
+
+.btn-insert-submit {
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
 }

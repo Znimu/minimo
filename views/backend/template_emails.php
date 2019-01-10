@@ -28,15 +28,20 @@
     <?php
         if (isset($_GET['action']) && $_GET['action'] === "newEmail") {
     ?>
-        <form action="?action=newEmailSave" method="post" id="form-new-email" name="form-new-email">
-            <input type="text" id="email" name="email" placeholder="E-MAIL" />
-            <input type="submit" value="Ajouter cet e-mail" />
-        </form>
+    <div id="form-new-email">
+        <br />
+        <h1>Nouvel e-mail</h1>
+            <form action="?action=newEmailSave" method="post" id="form-new-email" name="form-new-email">
+                <input type="text" id="email" name="email" placeholder="E-MAIL" />
+                <input type="submit" value="Ajouter cet e-mail" class="btn-insert-submit" />
+            </form>
+        </div>
+        <br /><br />
     <?php
         }
         else {
     ?>
-    <a href="?action=newEmail">Nouvel e-mail</a>
+    <a href="?action=newEmail#form-new-email">Nouvel e-mail</a>
     <?php
         }
     ?>

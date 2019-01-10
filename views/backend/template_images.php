@@ -34,27 +34,31 @@
     <?php
         if (isset($_GET['action']) && $_GET['action'] === "newImage") {
     ?>
-        <form action="?action=newImageSave" method="post" id="form-new-image" name="form-new-image">
-            <select id="author" name="author">
-                <?php
-                    while ($author = $authors->fetch()) {
-                ?>
-                    <option value="<?= $author['id'] ?>"><?= $author['user_login'] ?></option>
-                <?php
-                    }
-                ?>
-            </select>
-            <input type="text" id="title" name="title" placeholder="TITLE" />
-            <input type="text" id="status" name="status" placeholder="STATUS" />
-            <input type="text" id="name" name="name" placeholder="NAME" />
-            <input type="submit" value="Ajouter cette image" />
-        </form>
+        <div id="form-new-image">
+            <br />
+            <h1>Nouvelle image</h1>
+            <form action="?action=newImageSave" method="post" id="form-new-image" name="form-new-image">
+                <select id="author" name="author">
+                    <?php
+                        while ($author = $authors->fetch()) {
+                    ?>
+                        <option value="<?= $author['id'] ?>"><?= $author['user_login'] ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+                <input type="text" id="title" name="title" placeholder="TITLE" />
+                <input type="text" id="status" name="status" placeholder="STATUS" />
+                <input type="text" id="name" name="name" placeholder="NAME" />
+                <input type="submit" value="Ajouter cette image" class="btn-insert-submit" />
+            </form>
+        </div>
         <br /><br />
     <?php
         }
         else {
     ?>
-    <a href="?action=newImage">Nouvelle image</a>
+    <a href="?action=newImage#form-new-image">Nouvelle image</a>
     <br /><br /><br />
     <?php
         }

@@ -34,19 +34,23 @@
     <?php
         if (isset($_GET['action']) && $_GET['action'] === "newContact") {
     ?>
-        <form action="?action=newContactSave" method="post" id="form-new-email" name="form-new-email">
-            <input type="text" id="name" name="name" placeholder="NOM" />
-            <input type="text" id="email" name="email" placeholder="E-MAIL" />
-            <input type="date" id="date" name="date" />
-            <textarea id="message" name="message" placeholder="MESSAGE"></textarea>
-            <input type="submit" value="Ajouter ce contact" />
-        </form>
+    <div id="form-new-contact">
+        <br />
+        <h1>Nouveau contact</h1>
+            <form action="?action=newContactSave" method="post" id="form-new-email" name="form-new-email">
+                <input type="text" id="name" name="name" placeholder="NOM" />
+                <input type="text" id="email" name="email" placeholder="E-MAIL" />
+                <input type="date" id="date" name="date" />
+                <textarea id="message" name="message" placeholder="MESSAGE"></textarea>
+                <input type="submit" value="Ajouter ce contact" class="btn-insert-submit" />
+            </form>
+        </div>
         <br /><br />
     <?php
         }
         else {
     ?>
-    <a href="?action=newContact">Nouveau contact</a>
+    <a href="?action=newContact#form-new-contact">Nouveau contact</a>
     <?php
         }
     ?>

@@ -41,30 +41,34 @@
     <?php
         if (isset($_GET['action']) && $_GET['action'] === "newArticle") {
     ?>
-        <form action="?action=newArticleSave" method="post" id="form-new-article" name="form-new-article">
-            <select id="author" name="author">
-                <?php
-                    while ($author = $authors->fetch()) {
-                ?>
-                    <option value="<?= $author['id'] ?>"><?= $author['user_login'] ?></option>
-                <?php
-                    }
-                ?>
-            </select>
-            <input type="date" id="date" name="date" />
-            <textarea type="text" id="content" name="content" placeholder="CONTENT"></textarea>
-            <input type="text" id="title" name="title" placeholder="TITLE" />
-            <input type="text" id="status" name="status" placeholder="STATUS" />
-            <input type="text" id="name" name="name" placeholder="NAME" />
-            <input type="text" id="category" name="category" placeholder="CATEGORY" />
-            <input type="submit" value="Ajouter cet article" />
-        </form>
+    <div id="form-new-article">
+        <br />
+        <h1>Nouvel article</h1>
+            <form action="?action=newArticleSave" method="post" id="form-new-article" name="form-new-article">
+                <select id="author" name="author">
+                    <?php
+                        while ($author = $authors->fetch()) {
+                    ?>
+                        <option value="<?= $author['id'] ?>"><?= $author['user_login'] ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+                <input type="date" id="date" name="date" />
+                <textarea type="text" id="content" name="content" placeholder="CONTENT"></textarea>
+                <input type="text" id="title" name="title" placeholder="TITLE" />
+                <input type="text" id="status" name="status" placeholder="STATUS" />
+                <input type="text" id="name" name="name" placeholder="NAME" />
+                <input type="text" id="category" name="category" placeholder="CATEGORY" />
+                <input type="submit" value="Ajouter cet article" class="btn-insert-submit" />
+            </form>
+        </div>
         <br /><br />
     <?php
         }
         else {
     ?>
-    <a href="?action=newArticle">Nouvel article</a>
+    <a href="?action=newArticle#form-new-article">Nouvel article</a>
     <br /><br /><br />
     <?php
         }

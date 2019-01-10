@@ -13,7 +13,7 @@
             <input type="text" id="email" name="email" value="<?= $contact['contact_email'] ?>" placeholder="E-MAIL" />
             <input type="date" id="date" name="date" value="<?= $contact['contact_date'] ?>" />
             <textarea id="message" name="message" placeholder="MESSAGE"><?= $contact['contact_message'] ?></textarea>
-            <input type="submit" value="Modifier ce contact" />
+            <input type="submit" value="Modifier ce contact" class="btn-modify-submit" />
         </form>
     <?php
         }

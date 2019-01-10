@@ -384,7 +384,7 @@ a {
     cursor: pointer;
 }
 
-.btn-insert-submit {
+.btn-insert-submit, .btn-modify-submit {
     padding: 10px 25px;
     border-radius: 5px;
     background: #eeeeee;

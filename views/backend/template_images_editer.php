@@ -25,7 +25,7 @@
             <input type="text" id="title" name="title" value="<?= $image['post_title'] ?>" placeholder="TITLE" />
             <input type="text" id="status" name="status" value="<?= $image['post_status'] ?>" placeholder="STATUS" />
             <input type="text" id="name" name="name" value="<?= $image['post_name'] ?>" placeholder="NAME" />
-            <input type="submit" value="Modifier cette image" />
+            <input type="submit" value="Modifier cette image" class="btn-modify-submit" />
         </form>
         <br /><br /><br />
     <?php

@@ -41,7 +41,7 @@
                     }
                 ?>
             </select>
-            <input type="submit" value="Modifier cet article" />
+            <input type="submit" value="Modifier cet article" class="btn-modify-submit" />
         </form>
         <br /><br /><br />
     <?php

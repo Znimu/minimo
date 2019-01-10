@@ -10,7 +10,7 @@
         <form action="?action=modifierEmail" method="post" id="form-editer-email" name="form-editer-email">
             <input type="hidden" id="id" name="id" value="<?= $email['id'] ?>" />
             <input type="text" id="email" name="email" value="<?= $email['newsletter_email'] ?>" placeholder="E-MAIL" />
-            <input type="submit" value="Modifier cet e-mail" />
+            <input type="submit" value="Modifier cet e-mail" class="btn-modify-submit" />
         </form>
     <?php
         }

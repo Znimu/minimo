@@ -3,6 +3,8 @@
 <?php ob_start(); ?>
 <div class="grid-container">
 	<h1> E-mails (newsletter)</h1>
+    <a href="?action=newEmail#form-new-email">&#x21E8; Nouvel e-mail</a>
+    <br /><br />
 
     <table>
         <tr>
@@ -41,7 +43,9 @@
         }
         else {
     ?>
-    <a href="?action=newEmail#form-new-email">Nouvel e-mail</a>
+    <br />
+    <a href="?action=newEmail#form-new-email">&#x21E8; Nouvel e-mail</a>
+    <br /><br /><br />
     <?php
         }
     ?>

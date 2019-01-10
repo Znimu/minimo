@@ -17,4 +17,20 @@ class ImageManager extends PostManager
 
         return $article;
     }
+
+    public function getFiles()
+    {
+        if ($dossier = opendir('./public/img/'))
+        {
+            while (false !== ($file = readdir($dossier)))
+            {
+                if ($file != '.' && $file != '..' && $file != 'upload' && $file != '09_me.png' && $file != 'logo_minimo.png' && $file != 'pub.png')
+                {
+                    //echo $file . "<br />";
+                    $images[] = $file;
+                }
+            }
+            return $images;
+        }
+    }
 }

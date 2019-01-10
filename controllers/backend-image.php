@@ -2,6 +2,7 @@
 function getImages() {
     $imageManager = new Minimo\Models\ImageManager();
     $images = $imageManager->getPosts("file");
+    $imageFiles = $imageManager->getFiles();
 
     $userManager = new Minimo\Models\UserManager();
     $authors = $userManager->getUsers();
@@ -12,6 +13,7 @@ function getImages() {
 function getImage($id) {
     $imageManager = new Minimo\Models\ImageManager();
     $image = $imageManager->getPost($id);
+    $imageFiles = $imageManager->getFiles();
 
     $userManager = new Minimo\Models\UserManager();
     $authors = $userManager->getUsers();

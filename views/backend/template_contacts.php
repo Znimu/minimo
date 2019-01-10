@@ -3,6 +3,8 @@
 <?php ob_start(); ?>
 <div class="grid-container">
 	<h1>Contacts</h1>
+    <a href="?action=newContact#form-new-contact">&#x21E8; Nouveau contact</a>
+    <br /><br />
 
     <table>
         <tr>
@@ -50,7 +52,9 @@
         }
         else {
     ?>
-    <a href="?action=newContact#form-new-contact">Nouveau contact</a>
+    <br />
+    <a href="?action=newContact#form-new-contact">&#x21E8; Nouveau contact</a>
+    <br /><br /><br />
     <?php
         }
     ?>

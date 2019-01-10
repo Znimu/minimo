@@ -2,7 +2,9 @@
 
 <?php ob_start(); ?>
 <div class="grid-container">
-	<h1>Articles</h1>
+    <h1>Articles</h1>
+    <a href="?action=newArticle#form-new-article">&#x21E8; Nouvel article</a>
+    <br /><br />
 
     <table>
         <tr>
@@ -80,7 +82,8 @@
         }
         else {
     ?>
-    <a href="?action=newArticle#form-new-article">Nouvel article</a>
+    <br />
+    <a href="?action=newArticle#form-new-article">&#x21E8; Nouvel article</a>
     <br /><br /><br />
     <?php
         }

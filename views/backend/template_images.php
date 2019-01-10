@@ -3,6 +3,8 @@
 <?php ob_start(); ?>
 <div class="grid-container">
 	<h1>Images</h1>
+    <a href="?action=newImage#form-new-image">&#x21E8; Nouvelle image</a>
+    <br /><br />
 
     <table>
         <tr>
@@ -49,7 +51,15 @@
                 </select>
                 <input type="text" id="title" name="title" placeholder="TITLE" />
                 <input type="text" id="status" name="status" placeholder="STATUS" />
-                <input type="text" id="name" name="name" placeholder="NAME" />
+                <select id="name" name="name">
+                    <?php
+                        foreach ($imageFiles as $value) {
+                    ?>
+                        <option value="<?= $value ?>"><?= $value ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
                 <input type="submit" value="Ajouter cette image" class="btn-insert-submit" />
             </form>
         </div>
@@ -58,7 +68,8 @@
         }
         else {
     ?>
-    <a href="?action=newImage#form-new-image">Nouvelle image</a>
+    <br />
+    <a href="?action=newImage#form-new-image">&#x21E8; Nouvelle image</a>
     <br /><br /><br />
     <?php
         }

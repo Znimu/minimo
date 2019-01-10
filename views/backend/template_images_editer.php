@@ -24,7 +24,18 @@
             </select>
             <input type="text" id="title" name="title" value="<?= $image['post_title'] ?>" placeholder="TITLE" />
             <input type="text" id="status" name="status" value="<?= $image['post_status'] ?>" placeholder="STATUS" />
-            <input type="text" id="name" name="name" value="<?= $image['post_name'] ?>" placeholder="NAME" />
+            <select id="name" name="name">
+                <?php
+                    foreach ($imageFiles as $value) {
+                ?>
+                    <option value="<?= $value ?>"
+                        <?= $value === $image['post_name'] ? "selected" : "" ?>>
+                        <?= $value ?>
+                    </option>
+                <?php
+                    }
+                ?>
+            </select>
             <input type="submit" value="Modifier cette image" class="btn-modify-submit" />
         </form>
         <br /><br /><br />

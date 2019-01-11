@@ -42,10 +42,10 @@
         <br />
         <h1>Nouveau commentaire</h1>
             <form action="?action=newCommentaireSave" method="post" id="form-new-email" name="form-new-email">
-                <input type="text" id="post_id" name="post_id" placeholder="POST ID" />
-                <input type="text" id="name" name="name" placeholder="NOM" />
-                <input type="text" id="email" name="email" placeholder="E-MAIL" />
-                <input type="date" id="date" name="date" />
+                <input type="text" id="post_id" name="post_id" placeholder="POST ID" class="input-demi-largeur" />
+                <input type="text" id="name" name="name" placeholder="NOM" class="input-demi-largeur" />
+                <input type="text" id="email" name="email" placeholder="E-MAIL" class="input-demi-largeur" />
+                <input type="date" id="date" name="date" class="input-demi-largeur" />
                 <textarea id="content" name="content" placeholder="MESSAGE"></textarea>
                 <input type="submit" value="Ajouter ce commentaire" class="btn-insert-submit" />
             </form>

@@ -47,7 +47,7 @@
         <br />
         <h1>Nouvel article</h1>
             <form action="?action=newArticleSave" method="post" id="form-new-article" name="form-new-article">
-                <select id="author" name="author">
+                <select id="author" name="author" class="input-demi-largeur">
                     <?php
                         while ($author = $authors->fetch()) {
                     ?>
@@ -56,12 +56,12 @@
                         }
                     ?>
                 </select>
-                <input type="date" id="date" name="date" />
-                <textarea type="text" id="content" name="content" placeholder="CONTENT"></textarea>
-                <input type="text" id="title" name="title" placeholder="TITLE" />
-                <input type="text" id="status" name="status" placeholder="STATUS" />
-                <input type="text" id="name" name="name" placeholder="NAME" />
-                <input type="text" id="category" name="category" placeholder="CATEGORY" />
+                <input type="date" id="date" name="date" class="input-demi-largeur" />
+                <textarea type="text" id="content" name="content" placeholder="CONTENT" class="textarea-hauteur"></textarea>
+                <input type="text" id="title" name="title" placeholder="TITLE" class="input-demi-largeur" />
+                <input type="text" id="status" name="status" placeholder="STATUS" class="input-demi-largeur" />
+                <input type="text" id="name" name="name" placeholder="NAME" class="input-demi-largeur" />
+                <input type="text" id="category" name="category" placeholder="CATEGORY" class="input-demi-largeur" />
                 <select id="image" name="image">
                         <option value="0">(no image linked)</option>
                     <?php

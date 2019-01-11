@@ -40,7 +40,7 @@
             <br />
             <h1>Nouvelle image</h1>
             <form action="?action=newImageSave" method="post" id="form-new-image" name="form-new-image">
-                <select id="author" name="author">
+                <select id="author" name="author" class="input-demi-largeur">
                     <?php
                         while ($author = $authors->fetch()) {
                     ?>
@@ -49,9 +49,9 @@
                         }
                     ?>
                 </select>
-                <input type="text" id="title" name="title" placeholder="TITLE" />
-                <input type="text" id="status" name="status" placeholder="STATUS" />
-                <select id="name" name="name">
+                <input type="text" id="title" name="title" placeholder="TITLE" class="input-demi-largeur" />
+                <input type="text" id="status" name="status" placeholder="STATUS" class="input-demi-largeur" />
+                <select id="name" name="name" class="input-demi-largeur">
                     <?php
                         foreach ($imageFiles as $value) {
                     ?>

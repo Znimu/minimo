@@ -8,8 +8,8 @@
         if ($image = $image->fetch()) {
     ?>
         <form action="?action=modifierImage" method="post" id="form-editer-image" name="form-editer-image">
-            <input type="hidden" id="id" name="id" value="<?= $image['id'] ?>" />
-            <select id="author" name="author">
+            <input type="hidden" id="id" name="id" value="<?= $image['id'] ?>" class="input-demi-largeur" />
+            <select id="author" name="author" class="input-demi-largeur">
                 <?php
                     while ($author = $authors->fetch()) {
                         $date = $image['post_date_fr'];
@@ -22,9 +22,9 @@
                     }
                 ?>
             </select>
-            <input type="text" id="title" name="title" value="<?= $image['post_title'] ?>" placeholder="TITLE" />
-            <input type="text" id="status" name="status" value="<?= $image['post_status'] ?>" placeholder="STATUS" />
-            <select id="name" name="name">
+            <input type="text" id="title" name="title" value="<?= $image['post_title'] ?>" placeholder="TITLE" class="input-demi-largeur" />
+            <input type="text" id="status" name="status" value="<?= $image['post_status'] ?>" placeholder="STATUS" class="input-demi-largeur" />
+            <select id="name" name="name" class="input-demi-largeur">
                 <?php
                     foreach ($imageFiles as $value) {
                 ?>

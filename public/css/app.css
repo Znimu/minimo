@@ -58,12 +58,9 @@ a {
 }
 
 .div-connexion-top {
-    padding: 10px 0;
+    padding: 5px 0;
     background: #F0F0F0;
     box-shadow: 3px 0 4px rgba(0, 0, 0, .4);
-}
-
-.div-connexion-top {
     margin-bottom: 0;
 }
 
@@ -281,6 +278,18 @@ a {
     box-sizing: border-box;
 }
 
+.comment-input:focus {
+    outline: 0;
+    border: 1px solid #8a8a8a;
+    background-color: #fefefe;
+    -webkit-box-shadow: 0 0 5px #cacaca;
+    box-shadow: 0 0 5px #cacaca;
+    -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+    transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+    transition: box-shadow .5s,border-color .25s ease-in-out;
+    transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
+}
+
 .comment-btn-submit, .btn-formContact {
     border-radius: 5px;
     border:1px solid #cccccc;
@@ -427,4 +436,13 @@ a {
     border-radius: 5px;
     background: #eeeeee;
     border: 1px solid #cccccc;
+}
+
+.input-demi-largeur {
+    display: inline;
+    width: 49.75%;
+}
+
+.textarea-hauteur {
+    height: 100px;
 }

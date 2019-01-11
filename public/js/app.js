@@ -119,3 +119,9 @@ function deleteImage(id) {
     if (confirm("Voulez-vous vraiment effacer cette image ?"))
         window.location = "?action=effacerImage&id=" + id;
 }
+
+// COMMENTAIRES
+function deleteCommentaire(id) {
+    if (confirm("Voulez-vous vraiment effacer ce commentaire ?"))
+        window.location = "?action=effacerCommentaire&id=" + id;
+}

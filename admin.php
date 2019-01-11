@@ -28,10 +28,11 @@ if (!isset($user))
 else { // On est connecté
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
+        
+        // EMAILS NEWSLETTER
         if ($action === "newsletters" || $action === "newEmail") {
             getEmails();
         }
-        // EMAILS NEWSLETTER
         elseif ($action === "editerEmail") {
             if (!isset($_GET['id']) || $_GET['id'] === "")
                 header("Location: admin.php?action=newsletters");
@@ -224,6 +225,55 @@ else { // On est connecté
         }
         elseif ($action === "newFile") {
             newFile();
+        }
+        // COMMENTAIRES
+        elseif ($action === "comments" || $action === "newCommentaire") {
+            getComments();
+        }
+        elseif ($action === "newCommentaireSave") {
+            if (!isset($_POST['post_id']) || $_POST['post_id'] === ""
+                || !isset($_POST['name']) || $_POST['name'] === ""
+                || !isset($_POST['email']) || $_POST['email'] === ""
+                || !isset($_POST['date']) || $_POST['date'] === ""
+                || !isset($_POST['content']) || $_POST['content'] === "") {
+                echo "Erreur : champ vide";
+                //header("Location: admin.php?action=contacts");
+            }
+            else {
+                newComment($_POST['post_id'], $_POST['name'], $_POST['email'], $_POST['content'], $_POST['date']);
+            }
+        }
+        elseif ($action === "effacerCommentaire") {
+            $erreur = "";
+            if (!isset($_GET['id']) || $_GET['id'] === "") {
+                $erreur = "Paramètre manquant";
+                header("Location: admin.php?action=commentaires");
+            }
+            else {
+                deleteComment($_GET['id']);
+            }
+        }
+        elseif ($action === "editerCommentaire") {
+            if (!isset($_GET['id']) || $_GET['id'] === "")
+                header("Location: admin.php?action=comments");
+            else {
+                getComment($_GET['id']);
+            }
+        }
+        elseif ($action === "modifierCommentaire") {
+            $erreur = "";
+            if (!isset($_POST['id']) || $_POST['id'] === ""
+                || !isset($_POST['post_id']) || $_POST['post_id'] === ""
+                || !isset($_POST['name']) || $_POST['name'] === ""
+                || !isset($_POST['email']) || $_POST['email'] === ""
+                || !isset($_POST['date']) || $_POST['date'] === ""
+                || !isset($_POST['content']) || $_POST['content'] === "") {
+                $erreur = "Paramètre manquant";
+                //header("Location: admin.php?action=comments");
+            }
+            else {
+                modifyComment($_POST['id'], $_POST['post_id'], $_POST['name'], $_POST['email'], $_POST['content'], $_POST['date']);
+            }
         }
         else {
             echo "404 - page not found";

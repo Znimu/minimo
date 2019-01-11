@@ -25,6 +25,7 @@
                         <li><a href="?action=articles">Articles</a></li>
                         <li><a href="?action=images">Images</a></li>
                         <li><a href="?action=upload">Upload</a></li>
+                        <li><a href="?action=comments">Comments</a></li>
                         <li><a href="?action=contacts">Contacts</a></li>
                         <li><a href="?action=newsletters">Newsletters</a></li>
                     </ul>

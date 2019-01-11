@@ -5,3 +5,4 @@ require('backend-contact.php');
 require('backend-article.php');
 require('backend-image.php');
 require('backend-upload.php');
+require('backend-comment.php');

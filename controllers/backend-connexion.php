@@ -2,8 +2,7 @@
 // CONNEXION
 function connexion($login, $password) {
     $userManager = new Minimo\Models\UserManager();
-    $resu = $userManager->exists($login, $password);
-    return $resu;
+    return $userManager->exists($login, $password);
 }
 
 function connexionForm() {

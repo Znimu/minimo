@@ -15,10 +15,22 @@
                 <div class="top-bar">
                     <div class="top-bar-left">
                         <?php
-                            if (isset($_SESSION['user'])) {
+                            if (isset($_SESSION['user']) && $_SESSION['user'] !== "") {
                         ?>
                         <p>Connecté : <strong><?= $_SESSION['user'] ?></strong>
-                            <a class="link-lowercase" href="admin.php">(admin)</a>
+                            (<a class="link-lowercase" href="admin.php">admin</a> - 
+                            <?php
+                                if (isset($_SESSION['edition']) && $_SESSION['edition'] === true) {
+                            ?>
+                            <a class="link-lowercase" href="index.php?action=editionEnd">retour au mode normal</a>)
+                            <?php
+                                }
+                                else {
+                            ?>
+                            <a class="link-lowercase" href="index.php?action=edition">activer le mode edition</a>)
+                            <?php
+                                }
+                            ?>
                         </p>
                         <?php
                             }

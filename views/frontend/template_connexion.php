@@ -1,24 +1,18 @@
 <?php $title = "Minimo - Connexion"; ?>
 
 <?php ob_start(); ?>
-<div class="grid-container connexion">
-    <form method="post" action="index.php?action=accueil" id="form-connexion" name="form-connexion">
-        <table class="tab-connexion">
-            <tr>
-                <td>Login</td>
-                <td><input type="text" id="login" name="login" /></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" id="password" name="password" /></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="centered">
-                    <input type="submit" id="btn-connexion" class="btn-connexion" name="btn-connexion" />
-                </td>
-            </tr>
-        </table>
-    </form>
+<div class="grid-container connexion-div">
+    <div class="div-connexion">
+        <form method="post" action="index.php?action=accueil" id="form-connexion" name="form-connexion">
+            <p>Login</p>
+            <input type="text" id="login" name="login" />
+            
+            <p>Password</p>
+            <input type="password" id="password" name="password" />
+            
+            <input type="submit" id="btn-connexion" class="btn-connexion" name="btn-connexion" value="Se connecter" />
+        </form>
+    </div>
 </div>
 <?php $content = ob_get_clean(); ?>
 

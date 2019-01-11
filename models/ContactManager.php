@@ -20,7 +20,7 @@ class ContactManager extends Manager
     public function getContact($id)
     {
         $db = $this->dbConnect();
-        $sql = 'SELECT *
+        $sql = 'SELECT *, DATE_FORMAT(contact_date, \'%Y-%m-%d\') AS contact_date_fr
                 FROM contact
                 WHERE id = ' . $id;
         $contact = $db->query($sql);

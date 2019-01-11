@@ -80,3 +80,15 @@ function updateComment($commentId, $author, $comment)
         header('Location: index.php?action=post&id=' . $post_id['post_id']);
     }
 }
+
+function editionModeEngaged()
+{
+    $_SESSION['edition'] = true;
+    header('Location: index.php?action=accueil');
+}
+
+function editionModeDisengaged()
+{
+    unset($_SESSION['edition']);
+    header('Location: index.php?action=accueil');
+}

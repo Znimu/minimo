@@ -9,11 +9,12 @@ if (isset($_GET['action']) && $_GET['action'] === "deconnexion") {
     exit();
 }
 elseif (isset($_POST['login']) && isset($_POST['password'])) {
-    if (connexion($_POST['login'], $_POST['password'])) {
+    if (connexion($_POST['login'], $_POST['password']) !== false) {
 		$_SESSION['user'] = $_POST['login'];
     }
     else {
-        echo "Mauvais login ou mot de passe";
+		echo "Mauvais login ou mot de passe";
+		exit();
     }
 }
 
@@ -60,6 +61,14 @@ if (isset($_GET['action'])) {
 				$erreur = "Message vide";
 
 			newContact("new contact", $erreur);
+			break;
+		
+		case "edition":
+			editionModeEngaged();
+			break;
+		
+		case "editionEnd":
+			editionModeDisengaged();
 			break;
 
 		default:

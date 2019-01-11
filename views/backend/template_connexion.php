@@ -15,6 +15,7 @@
                 <div class="top-bar-left">
                     <a href="index.php">
                         <img class="img-logo" src="public/img/logo_minimo.png" />
+                        <p class="admin-subtitle">(admin)</p>
                     </a>
                 </div>
 
@@ -34,25 +35,20 @@
         </div>
 
 
-
-        <div class="grid-container">
-            <form method="post" action="admin.php" id="form-connexion" name="form-connexion">
-                <table class="tab-connexion">
-                    <tr>
-                        <td>Login</td>
-                        <td><input type="text" id="login" name="login" /></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" id="password" name="password" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="centered">
-                            <input type="submit" id="btn-connexion" class="btn-connexion" name="btn-connexion" />
-                        </td>
-                    </tr>
-                </table>
-            </form>
+        <div class="grid-container connexion">
+            <br /><br /><br />
+            <div class="div-connexion">
+                <form method="post" action="admin.php?action=articles" id="form-connexion" name="form-connexion">
+                    <p>Login</p>
+                    <input type="text" id="login" name="login" />
+                    
+                    <p>Password</p>
+                    <input type="password" id="password" name="password" />
+                    
+                    <input type="submit" id="btn-connexion" class="btn-connexion" name="btn-connexion" value="Se connecter" />
+                </form>
+            </div>
+            <br /><br /><br />
         </div>
 
         <div class="block-footer">

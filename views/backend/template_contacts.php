@@ -40,10 +40,10 @@
         <br />
         <h1>Nouveau contact</h1>
             <form action="?action=newContactSave" method="post" id="form-new-email" name="form-new-email">
-                <input type="text" id="name" name="name" placeholder="NOM" />
-                <input type="text" id="email" name="email" placeholder="E-MAIL" />
-                <input type="date" id="date" name="date" />
-                <textarea id="message" name="message" placeholder="MESSAGE"></textarea>
+                <input type="text" id="name" name="name" placeholder="NOM" class="input-demi-largeur" />
+                <input type="text" id="email" name="email" placeholder="E-MAIL" class="input-demi-largeur" />
+                <input type="date" id="date" name="date" class="input-demi-largeur" />
+                <textarea id="message" name="message" placeholder="MESSAGE" class="textarea-hauteur"></textarea>
                 <input type="submit" value="Ajouter ce contact" class="btn-insert-submit" />
             </form>
         </div>

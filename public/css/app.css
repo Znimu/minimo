@@ -57,6 +57,10 @@ a {
     color: #aba99d;
 }
 
+[type=text], [type=date], [type=password], textarea {
+    border-radius: 5px;
+}
+
 .div-connexion-top {
     padding: 5px 0;
     background: #F0F0F0;
@@ -445,4 +449,20 @@ a {
 
 .textarea-hauteur {
     height: 100px;
+}
+
+.connexion-div {
+    margin-top: 45px;
+    margin-bottom: 60px;
+}
+
+.div-connexion {
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+    text-align: center;
+    background: #F0F0F0;
 }

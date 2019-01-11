@@ -24,8 +24,8 @@ class UserManager extends Manager
                 WHERE user_login = ?
                 AND user_pass = ?';
         $user = $db->prepare($sql);
-        $req = $user->execute(array($login, $password));
+        $user->execute(array($login, $password));
 
-        return $req;
+        return $user->fetch();
     }
 }

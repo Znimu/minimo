@@ -62,7 +62,7 @@
         <div id="comments" class="comments">
             <div class="grid-x grid-margin-x">
                 <div class="medium-12 cell">
-                    <div class="see-more-title" href="#">2 comments</div>
+                    <div class="see-more-title" href="#"><?= $nbComments ?> comment(s)</div>
                 </div>
             </div>
             

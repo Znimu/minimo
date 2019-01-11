@@ -26,6 +26,7 @@ function get1Post()
 
     $post0 = $postManager->get1Post($articleEnCours);
     $comments = $commentManager->getComments($articleEnCours);
+    $nbComments = $comments->rowCount();
     $posts = $postManager->get3Posts($articleEnCours);
     $topPosts = $postManager->getTopPosts();
 

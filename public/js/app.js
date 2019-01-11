@@ -125,3 +125,7 @@ function deleteCommentaire(id) {
     if (confirm("Voulez-vous vraiment effacer ce commentaire ?"))
         window.location = "?action=effacerCommentaire&id=" + id;
 }
+function deleteCommentaireFE(id) {
+    if (confirm("Voulez-vous vraiment effacer ce commentaire ?"))
+        window.location = "admin.php?action=effacerCommentaire&id=" + id;
+}

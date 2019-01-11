@@ -14,7 +14,27 @@
                 <img class="img-top" src="public/img/<?= $post0['image_name'] ?>" />
 
                 <a href="?action=categorie&cat=<?= $post0['article_category'] ?>"><?= $post0['article_category'] ?></a>
-                <h1><?= $post0['article_title'] ?></h1>
+                <h1>
+                    <?= $post0['article_title'] ?>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                    ?>
+                    <br />
+                    <span class="h1-admin-liens">
+                        <i> (admin : 
+                        <a href="admin.php?action=editerArticle&id=<?= $post0['article_id'] ?>">
+                            &#x21E8; Edit
+                        </a>
+                        - 
+                        <a onclick="deleteArticleFE(<?= $post0['article_id'] ?>)">
+                            &#x21E8; Delete
+                        </a>
+                        )</i>
+                    </span>
+                    <?php
+                        }
+                    ?>
+                </h1>
                 <p><?= $post0['article_content'] ?></p>
                 
                 <div class="share">SHARE 

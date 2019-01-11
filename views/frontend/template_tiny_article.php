@@ -12,8 +12,29 @@
 		<?= $post['article_category'] ?>
 	</a>
 	<a href="?action=article&id=<?= $post['article_id'] ?>">
-		<h1><?= $post['article_title'] ?></h1>
+		<h1>
+			<?= $post['article_title'] ?>
+		</h1>
 	</a>
+	<?php
+	if (isset($_SESSION['user'])) {
+	?>
+	<span class="h1-admin-liens2">
+		<i> (admin : 
+		<a href="admin.php?action=editerArticle&id=<?= $post['article_id'] ?>">
+			&#x21E8; Edit
+		</a>
+		- 
+		<a onclick="deleteArticleFE(<?= $post['article_id'] ?>)">
+			&#x21E8; Delete
+		</a>
+		)</i>
+	</span>
+	<br /><br />
+	<?php
+		}
+	?>
+		
 	<p><?= $content ?></p>
 
 	<?php

@@ -28,7 +28,10 @@
                         <?php
                             if (isset($_SESSION['user'])) {
                         ?>
-                        <a class="lien-connexion-frontend" href="?action=deconnexion">Deconnexion</a>
+                        <a class="lien-connexion-frontend" href="?action=deconnexion">
+                            <i class="fas fa-power-off"></i>
+                            Deconnexion
+                        </a>
                         <?php
                             }
                             else {

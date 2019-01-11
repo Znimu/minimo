@@ -113,6 +113,10 @@ function deleteArticle(id) {
     if (confirm("Voulez-vous vraiment effacer cet article ?"))
         window.location = "?action=effacerArticle&id=" + id;
 }
+function deleteArticleFE(id) {
+    if (confirm("Voulez-vous vraiment effacer cet article ?"))
+        window.location = "admin.php?action=effacerArticle&id=" + id;
+}
 
 // IMAGES
 function deleteImage(id) {

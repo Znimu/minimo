@@ -80,6 +80,21 @@ a {
     text-transform: none;
 }
 
+.h1-admin-liens {
+    font-family: font_texts;
+    font-size: 16px;
+}
+.h1-admin-liens2 {
+    display: block;
+    margin-top: -20px;
+    font-family: font_texts;
+    font-size: 16px;
+}
+
+.fa-power-off {
+    margin-right: 10px;
+}
+
 /* ACCUEIL */
 .site-bar .menu-top {
     margin-top: 30px;

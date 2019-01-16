@@ -91,6 +91,38 @@ $(document).ready(function() {
 
         addComment();
     });
+
+    // MODE EDITION ARTICLE SENT
+    function sendFormEdition() {
+        var article_id = $('#edition-article-id').val();
+        var article_category = $('#edition-article-category').val();
+        var article_title = $('#edition-article-title').val();
+        var article_content = $('#edition-article-content').val();
+    
+        $.ajax({
+            method: "POST",
+            url: "controllers/ajax/modeEditionSendArticle.php",
+            data: {
+                articleId: article_id,
+                category: article_category,
+                title: article_title,
+                content: article_content
+            }
+        })
+        .done(function(msg) {
+            if (msg === "Article ID vide" || msg === "Catégorie vide" || msg === "Titre vide" || msg === "Contenu vide")
+                alert("Article non sauvegardé : " + msg);
+            else
+                alert("Article sauvegardé (" + msg + ")");
+        })
+        .fail(function(msg) {
+          alert("Error : " + msg.responseText);
+        });
+    }
+
+    $('#mode-edition-submit').on("click", function() {
+        sendFormEdition();
+    });
 });
 
 

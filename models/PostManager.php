@@ -152,6 +152,18 @@ class PostManager extends Manager
         return $post;
     }
 
+    public function modeEditionUpdatePost($id, $content, $title, $category) {
+        $db = $this->dbConnect();
+        $sql = 'UPDATE posts
+                SET post_content = "' . $content . '",
+                    post_title = "' . $title . '",
+                    post_category = "' . $category . '"
+                WHERE id = ' . $id;
+        $post = $db->query($sql);
+
+        return $post;
+    }
+
     public function deletePost($id) {
         $db = $this->dbConnect();
         

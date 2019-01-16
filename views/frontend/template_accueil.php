@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <?php require('template_main_article.php'); ?>
 
-<div class="grid-container">
+<div class="grid-container main-container">
 	<div class="grid-x grid-margin-x">
 		<?php
 			require('template_tiny_article.php');

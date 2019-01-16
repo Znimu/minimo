@@ -18,10 +18,6 @@
 	src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf');
 }
 
-body {
-
-}
-
 h1, a h1 {
     font-family: font_titles;
     text-transform: none;
@@ -97,6 +93,10 @@ a {
 }
 
 /* ACCUEIL */
+.main-container {
+    padding: 0 50px;
+}
+
 .site-bar .menu-top {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -412,7 +412,7 @@ a {
 .btn-connexion {
     padding: 10px 25px;
     border-radius: 5px;
-    background: #eeeeee;
+    background: #cccccc;
     border: 1px solid #cccccc;
 }
 
@@ -438,7 +438,7 @@ a {
 .btn-insert-submit, .btn-modify-submit {
     padding: 10px 25px;
     border-radius: 5px;
-    background: #eeeeee;
+    background: #cccccc;
     border: 1px solid #cccccc;
 }
 
@@ -460,9 +460,36 @@ a {
     margin: auto;
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 20px 40px;
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .4);
     text-align: center;
     background: #F0F0F0;
+}
+
+.div-connexion p {
+    margin-bottom: 0;
+}
+
+.edition-label {
+    font-family: font_texts;
+    font-size: 11px;
+    color: #626262;
+}
+
+.edition-input-category {
+    text-transform: uppercase;
+    color: #aba99d;
+}
+.edition-input-title {
+    width: 100%;
+    font-family: font_titles;
+    text-transform: none;
+    color: #626262;
+}
+.edition-textarea-content {
+    border-radius: 0px;
+    font-size: 14px;
+    height: 300px;
+    box-shadow: none;
 }

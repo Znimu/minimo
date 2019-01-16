@@ -25,7 +25,7 @@ class ArticleManager extends PostManager
         return $article;
     }
 
-    public function getPost($postId)
+    public function getPost($postId , $sticky=false)
     {
         $db = $this->dbConnect();
         $sql = 'SELECT *,
@@ -44,10 +44,36 @@ class ArticleManager extends PostManager
                 LEFT JOIN posts_posts AS pp ON a.id = post_id1
                 LEFT JOIN posts AS f ON f.id = post_id2
                 WHERE a.id = ' . $postId . '
+                AND a.post_sticky = ' . $sticky . '
                 ORDER BY a.post_date';
         $req = $db->query($sql);
 
         return $req;
+    }
+
+    public function getPostSticky()
+    {
+        $db = $this->dbConnect();
+        $sql = 'SELECT *,
+                    a.id AS article_id,
+                    DATE_FORMAT(a.post_date, \'%Y-%m-%d\') AS article_date_fr,
+                    a.post_author AS article_author,
+                    a.post_title AS article_title,
+                    a.post_name AS article_name,
+                    a.post_content AS article_content,
+                    a.post_status AS article_status,
+                    a.post_category AS article_category,
+                    f.id AS image_id,
+                    f.post_title AS image_title,
+                    f.post_name AS image_name
+                FROM posts AS a
+                LEFT JOIN posts_posts AS pp ON a.id = post_id1
+                LEFT JOIN posts AS f ON f.id = post_id2
+                WHERE a.post_sticky = true
+                ORDER BY a.post_date';
+        $req = $db->query($sql);
+
+        return $req->fetch();
     }
 
     public function updateArticle($id, $author, $date, $content, $title, $status, $name, $category, $image) {

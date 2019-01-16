@@ -1,5 +1,5 @@
 <div class="see-more">
-    <div class="grid-container">
+    <div class="grid-container main-container">
         <div class="grid-x grid-margin-x">
             <div class="medium-12 cell">
             <div class="see-more-title" href="#">You may also like</div>

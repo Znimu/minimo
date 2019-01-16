@@ -3,7 +3,8 @@ require('frontend-connexion.php');
 
 function get2Posts()
 {
-    $postManager = new Minimo\Models\PostManager();
+    $postManager = new Minimo\Models\ArticleManager();
+    $postSticky = $postManager->getPostSticky();
     $posts = $postManager->getNBPosts(2, 0);
 
     require('views/frontend/template_accueil.php');
@@ -11,7 +12,7 @@ function get2Posts()
 
 function listPostsCategory($category)
 {
-    $postManager = new Minimo\Models\PostManager();
+    $postManager = new Minimo\Models\ArticleManager();
     $posts = $postManager->getPostsCategory($category);
     $action = "categorie";
 
@@ -21,7 +22,7 @@ function listPostsCategory($category)
 function get1Post()
 {
     $articleEnCours = $_GET['id'];
-    $postManager = new Minimo\Models\PostManager();
+    $postManager = new Minimo\Models\ArticleManager();
     $commentManager = new Minimo\Models\CommentManager();
 
     $post0 = $postManager->get1Post($articleEnCours);
@@ -36,7 +37,7 @@ function get1Post()
 function get3PostsMore($action)
 {
     $articleEnCours = 0;
-    $postManager = new Minimo\Models\PostManager();
+    $postManager = new Minimo\Models\ArticleManager();
 
     $posts = $postManager->get3Posts($articleEnCours);
     
@@ -45,7 +46,7 @@ function get3PostsMore($action)
 
 function newContact($action, $erreur) {
     $articleEnCours = 0;
-    $postManager = new Minimo\Models\PostManager();
+    $postManager = new Minimo\Models\ArticleManager();
 
     $posts = $postManager->get3Posts($articleEnCours);
 
